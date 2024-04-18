@@ -76,8 +76,8 @@ jobs:
           npx --no-install astro build \
             --site "https://${{ env.pagesurl }}" \
             --base "${{ env.PREVIEW_PATH }}"
-            --outdir "${{env.PREVIEW_PATH}}/dist"
-            --cachedir "${{env.PREVIEW_PATH}}/node_modules/.astro"
+            --outDir "${{env.PREVIEW_PATH}}/dist"
+            --cacheDir "${{env.PREVIEW_PATH}}/node_modules/.astro"
         working-directory: ${{ env.INPUT_PATH}}
 
       - name: Upload artifact
