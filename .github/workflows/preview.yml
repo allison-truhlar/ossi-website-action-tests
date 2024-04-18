@@ -75,8 +75,8 @@ jobs:
         run: |
           npx --no-install astro build \
             --site "https://${{ env.pagesurl }}" \
-            --base "${{ env.PREVIEW_PATH }}"
-            --outDir "${{env.PREVIEW_PATH}}/dist"
+            --base "${{ env.PREVIEW_PATH }}" \
+            --outDir "${{env.PREVIEW_PATH}}/dist" \
             --cacheDir "${{env.PREVIEW_PATH}}/node_modules/.astro"
         working-directory: ${{ env.INPUT_PATH}}
 
