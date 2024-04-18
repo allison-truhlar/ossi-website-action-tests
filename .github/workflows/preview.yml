@@ -76,15 +76,11 @@ jobs:
             --cacheDir "$GITHUB_WORKSPACE/${{env.PREVIEW_PATH}}/node_modules/.astro"
         working-directory: ${{ env.INPUT_PATH}}
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ${{env.PREVIEW_PATH}}/dist
-
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: ${{env.PREVIEW_PATH}}/dist
+          folder: $GITHUB_WORKSPACE/${{env.PREVIEW_PATH}}/dist
+          target-folder: ${{env.PREVIEW_PATH}}
           force: false
 
       - name: Expose deployment URL
