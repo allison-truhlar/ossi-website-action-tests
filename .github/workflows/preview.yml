@@ -20,7 +20,7 @@ concurrency: preview-${{ github.ref }}
 
 env:
   INPUT_PATH: "."
-  PREVIEW_FOLDER: "$GITHUB_WORKSPACE/pr-preview" # subfolder
+  PREVIEW_FOLDER: "/pr-preview" # subfolder
   pr: ${{ github.event.number }}
   OSSI_SITE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   action: auto
@@ -72,8 +72,8 @@ jobs:
           npx --no-install astro build \
             --site "https://${{ env.pagesurl }}" \
             --base "${{ env.PREVIEW_PATH }}" \
-            --outDir "${{env.PREVIEW_PATH}}/dist" \
-            --cacheDir "${{env.PREVIEW_PATH}}/node_modules/.astro"
+            --outDir "$GITHUB_WORKSPACE/${{env.PREVIEW_PATH}}/dist" \
+            --cacheDir "$GITHUB_WORKSPACE/${{env.PREVIEW_PATH}}/node_modules/.astro"
         working-directory: ${{ env.INPUT_PATH}}
 
       - name: Upload artifact
