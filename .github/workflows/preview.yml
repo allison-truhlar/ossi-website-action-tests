@@ -20,7 +20,7 @@ concurrency: preview-${{ github.ref }}
 
 env:
   INPUT_PATH: "."
-  PREVIEW_FOLDER: "/pr-preview" # subfolder
+  PREVIEW_FOLDER: "/tmp/pr-preview" # Changed to /tmp to ensure it's writable
   pr: ${{ github.event.number }}
   OSSI_SITE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   action: auto
@@ -38,7 +38,6 @@ jobs:
         run: |
           org=$(echo "${{env.deployrepo}}" | cut -d "/" -f 1)
           thirdleveldomain=$(echo "${{env.deployrepo}}" | cut -d "/" -f 2)
-
           if [ "${org}.github.io" == "$thirdleveldomain" ]; then
             pagesurl="${org}.github.io"
           else
@@ -46,15 +45,13 @@ jobs:
           fi
           echo "pagesurl=$pagesurl" >> $GITHUB_ENV
           echo "PREVIEW_PATH=${{env.PREVIEW_FOLDER}}/pr-${{env.pr}}" >> $GITHUB_ENV
+          echo "ACTUAL_PREVIEW_PATH=/home/runner/work/${{ env.deployrepo }}/pr-preview/pr-${{ env.pr }}" >> $GITHUB_ENV
           echo "emptydir=$(mktemp -d)" >> $GITHUB_ENV
           echo "datetime=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
         shell: bash
 
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Determine auto action
-        run: bash .github/actions/determine-auto-action.sh
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -71,21 +68,31 @@ jobs:
         run: |
           npx --no-install astro build \
             --site "https://${{ env.pagesurl }}" \
-            --base "${{ env.PREVIEW_PATH }}" \
-            --outDir "$GITHUB_WORKSPACE/${{env.PREVIEW_PATH}}/dist" \
-            --cacheDir "$GITHUB_WORKSPACE/${{env.PREVIEW_PATH}}/node_modules/.astro"
-        working-directory: ${{ env.INPUT_PATH}}
+            --base "/pr-preview/pr-${{ env.pr }}" \
+            --outDir "${{ env.PREVIEW_PATH }}/dist" \
+            --cacheDir "${{ env.PREVIEW_PATH }}/node_modules/.astro"
+        working-directory: ${{ env.INPUT_PATH }}
+
+      - name: Create actual preview directory
+        run: mkdir -p ${{ env.ACTUAL_PREVIEW_PATH }}/dist
+
+      - name: Copy build to actual directory
+        run: cp -R ${{ env.PREVIEW_PATH }}/dist/* ${{ env.ACTUAL_PREVIEW_PATH }}/dist/
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ env.ACTUAL_PREVIEW_PATH }}/dist
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: $GITHUB_WORKSPACE/${{env.PREVIEW_PATH}}/dist
-          target-folder: ${{env.PREVIEW_PATH}}
+          folder: ${{ env.ACTUAL_PREVIEW_PATH }}/dist
           force: false
 
       - name: Expose deployment URL
         id: url
-        run: echo "url=https://${{ env.pagesurl }}/${{ env.PREVIEW_PATH }}/"  >> $GITHUB_OUTPUT
+        run: echo "url=https://${{ env.pagesurl }}/${{ env.ACTUAL_PREVIEW_PATH }}/"  >> $GITHUB_OUTPUT
         shell: bash
 
       - name: Leave a comment after deployment
