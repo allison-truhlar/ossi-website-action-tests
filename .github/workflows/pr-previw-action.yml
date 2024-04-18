@@ -1,6 +1,5 @@
 # from https://github.com/rossjrw/pr-preview-action/tree/main
-name: Deploy PR previews
-
+name: Deploy PR previews v2
 on:
   pull_request:
     types:

@@ -1,9 +1,8 @@
-name: Deploy PR previews
+name: Deploy PR previews v1
 
 on:
   workflow_dispatch:
   pull_request:
-    branches: main
     types:
       - opened
       - reopened
@@ -87,6 +86,7 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
+          branch: main
           folder: ${{ env.ACTUAL_PREVIEW_PATH }}/dist
           force: false
 
