@@ -1,0 +1,335 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="/ossi-website/favicon.ico"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v4.6.2"><title>OSSI@Janelia</title><style is:global>
+  :root {
+    --font-sans: "Inter Variable";
+    --font-serif: var(--font-sans);
+    --font-heading: var(--font-sans);
+
+    /* --color-primary: rgb(30 64 175); */
+    --color-primary: rgb(5 141 150);
+    /* --color-secondary: rgb(30 58 138); */
+    --color-secondary: rgb(0 164 80);
+    /* --color-accent: rgb(109 40 217); */
+    --color-accent: rgb(63 194 205);
+
+    --color-text-heading: rgb(0 0 0);
+    --color-text-default: rgb(16 16 16);
+    --color-text-muted: rgb(16 16 16 / 66%);
+
+    --color-bg-page: rgb(255 255 255);
+    --color-bg-page-dark: rgb(3 6 32);
+
+    /* default color - this is dynamically updated by handleTagSelection */
+    --color-bg-selected-tag: var(--color-primary);
+  }
+
+  .dark {
+    --font-sans: "Inter Variable";
+    --font-serif: var(--font-sans);
+    --font-heading: var(--font-sans);
+
+    /* --color-primary: rgb(30 64 175); */
+    --color-primary: rgb(5 141 150);
+    /* --color-secondary: rgb(30 58 138); */
+    --color-secondary: rgb(0 164 80);
+    /* --color-accent: rgb(109 40 217); */
+    --color-accent: rgb(63 194 205);
+
+    --color-text-heading: rgb(0 0 0);
+    --color-text-default: rgb(229 236 246);
+    --color-text-muted: rgb(229 236 246 / 66%);
+
+    --color-bg-page: var(--color-bg-page-dark);
+
+    /* default color - this is dynamically updated by handleTagSelection */
+    --color-bg-selected-tag: var(--color-primary);
+  }
+</style><link rel="stylesheet" href="/ossi-website/_astro/_slug_.DTTsL1iT.css">
+<style>.twitter-tweet:not(.twitter-tweet-rendered){padding:var(--tc-padding, 1em);border:1px solid var(--tc-border-color, #cfd9de)}.twitter-tweet:not(.twitter-tweet-rendered)>:first-child{margin-top:0}.twitter-tweet:not(.twitter-tweet-rendered)>:last-child{margin-bottom:0}lite-youtube{background-color:#000;position:relative;display:block;contain:content;background-position:center center;background-size:cover;cursor:pointer;max-width:720px}lite-youtube:before{content:attr(data-title);display:block;position:absolute;top:0;background-image:linear-gradient(180deg,#000000ab,#0000008a 14%,#00000026 54%,#0000000d 72%,#0000 94%);height:99px;width:100%;font-family:YouTube Noto,Roboto,Arial,Helvetica,sans-serif;color:#eee;text-shadow:0 0 2px rgba(0,0,0,.5);font-size:18px;padding:25px 20px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;box-sizing:border-box}lite-youtube:hover:before{color:#fff}lite-youtube:after{content:"";display:block;padding-bottom:56.25%}lite-youtube>iframe{width:100%;height:100%;position:absolute;top:0;left:0;border:0}lite-youtube>.lty-playbtn{display:block;width:100%;height:100%;background:no-repeat center/68px 48px;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg>');position:absolute;cursor:pointer;z-index:1;filter:grayscale(100%);transition:filter .1s cubic-bezier(0,0,.2,1);border:0}lite-youtube:hover>.lty-playbtn,lite-youtube .lty-playbtn:focus{filter:none}lite-youtube.lyt-activated{cursor:unset}lite-youtube.lyt-activated:before,lite-youtube.lyt-activated>.lty-playbtn{opacity:0;pointer-events:none}.lyt-visually-hidden{clip:rect(0 0 0 0);-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;overflow:hidden;position:absolute;white-space:nowrap;width:1px}lite-youtube>iframe{all:unset!important;width:100%!important;height:100%!important;position:absolute!important;inset:0!important;border:0!important}lite-vimeo{font-size:10px;background-color:#000;position:relative;display:block;contain:content;background-position:center center;background-size:cover}lite-vimeo:after{content:"";display:block;padding-bottom:56.25%}lite-vimeo>iframe{all:unset!important;width:100%!important;height:100%!important;position:absolute!important;inset:0!important;border:0!important}lite-vimeo>.ltv-playbtn{content:"";position:absolute;inset:0;width:100%;background:transparent;outline:0;border:0;cursor:pointer}lite-vimeo>.ltv-playbtn:before{width:6.5em;height:4em;background:#172322bf;opacity:.8;border-radius:.25rem;transition:all .2s cubic-bezier(0,0,.2,1)}lite-vimeo>.ltv-playbtn:focus:before{outline:auto}lite-vimeo:hover>.ltv-playbtn:before{background-color:#00adef;background-color:var(--ltv-color, #00adef);opacity:1}lite-vimeo>.ltv-playbtn:after{border-style:solid;border-width:1em 0 1em 1.7em;border-color:transparent transparent transparent #fff}lite-vimeo>.ltv-playbtn:before,lite-vimeo>.ltv-playbtn:after{content:"";position:absolute;top:50%;left:50%;transform:translate3d(-50%,-50%,0)}lite-vimeo.ltv-activated:before,lite-vimeo.ltv-activated>.ltv-playbtn{cursor:unset;opacity:0;pointer-events:none}
+</style><script type="module" src="/ossi-website/_astro/hoisted.XVAdaamv.js"></script></head> <body class="text-default bg-page"> <header class="scroll fixed top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out" data-sticky-header="true" id="header"> <div class="absolute inset-0 bg-white dark:bg-dark"></div> <div class="relative text-default p-3 md:px-6 w-full flex justify-between"> <a class="flex items-center" href="/ossi-website"> <span class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl font-bold text-gray-900 whitespace-nowrap dark:text-white"></span> <span class="min-[600px]:hidden self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl lg:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"> 🔬   Janelia OSSI </span> <span class="hidden min-[600px]:block self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl lg:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"> 🔬   Janelia Open Source Science Initiative </span> </a> <div class="flex"> <div class="flex items-center lg:hidden order-2"> <button class="flex flex-col h-12 w-12 rounded justify-center items-center cursor-pointer group" aria-label="Toggle Menu" data-aw-toggle-menu> <span class="sr-only">Toggle Menu</span>  <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:rotate-45 group-[.expanded]:translate-y-2.5"></span> <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:opacity-0"></span> <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:-rotate-45 group-[.expanded]:-translate-y-2.5"></span>  </button> </div> <nav class="items-center w-full lg:w-auto hidden lg:flex text-default overflow-y-auto overflow-x-hidden lg:overflow-y-visible lg:overflow-x-auto lg:mx-5" aria-label="Main navigation"> <ul class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium"> <li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/ossi-website"> Home </a> </li><li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/ossi-website/projects"> Projects </a> </li><li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/ossi-website/ecosystems"> Ecosystems </a> </li><li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/ossi-website/ossi"> OSSI </a> </li><li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/ossi-website/blog"> Blog </a> </li> </ul> </nav> <div id="toggle-theme" class="self-center flex items-center w-auto static justify-end"> <button type="button" class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="Toggle between Dark and Light mode" data-toggle-color-scheme> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6" data-icon="tabler:sun">  <symbol id="ai:tabler:sun"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0-8 0m-5 0h1m8-9v1m8 8h1m-9 8v1M5.6 5.6l.7.7m12.1-.7l-.7.7m0 11.4l.7.7m-12.1-.7l-.7.7"/></symbol><use xlink:href="#ai:tabler:sun"></use>  </svg> </button> </div> </div> </div> </header>  <div class="pt-24 pb-8 max-w-7xl mx-auto"> <a class="self-start mx-6 border-b-2 text-sm transition ease-in duration-200 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer" href="/ossi-website/projects">
+Projects
+</a> <div class="flex flex-col lg:grid grid-cols-6"> <section class="row-start-1 row-span-1 col-span-4 pt-6 pb-8"> <h1 class="mx-6 text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading"> OSSI Website </h1> <p class="mx-6 mt-6 md:mt-10 text-xl md:text-2xl text-muted dark:text-slate-400"> A portfolio for Open Science Software Iniative-supported projects </p> </section> <div class="px-6 py-12 lg:p-0 lg:pl-12 row-start-1 row-span-2 col-start-5 col-span-2 bg-primary lg:bg-page dark:bg-slate-900"> <div class="p-6 rounded-md shadow-sm lg:shadow-none bg-page"> <h2 class="text-xl font-bold mb-6">Quick links</h2> <div class="flex flex-row flex-wrap gap-6 mx-auto"> <div class="flex flex-col gap-1 mr-8"> <h3 class="font-bold mb-1">Get started</h3> <a class="self-start flex items-center gap-1 transition ease-in duration-200 hover:bg-gray-100 dark:text-slate-300 dark:hover:bg-slate-800 cursor-pointer" href="https://github.com/JaneliaSciComp/ossi-website"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5  inline-block" data-icon="tabler:square-chevron-right">  <symbol id="ai:tabler:square-chevron-right"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m11 9l3 3l-3 3"/><path d="M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></g></symbol><use xlink:href="#ai:tabler:square-chevron-right"></use>  </svg>
+Source code
+</a> <a class="self-start flex items-center gap-1 transition ease-in duration-200 hover:bg-gray-100 dark:text-slate-300 dark:hover:bg-slate-800 cursor-pointer" href="https://github.com/JaneliaSciComp/ossi-website"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5  inline-block" data-icon="tabler:square-chevron-right">  <use xlink:href="#ai:tabler:square-chevron-right"></use>  </svg>
+Documentation
+</a> <a class="self-start flex items-center gap-1 transition ease-in duration-200 hover:bg-gray-100 dark:text-slate-300 dark:hover:bg-slate-800 cursor-pointer" href="https://github.com/JaneliaSciComp/ossi-website?tab=readme-ov-file#how-to-addedit-your-software-project"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5  inline-block" data-icon="tabler:square-chevron-right">  <use xlink:href="#ai:tabler:square-chevron-right"></use>  </svg>
+How to install
+</a> </div> <div class="flex flex-col gap-1 mr-8 md:mr-12"> <h3 class="font-bold mb-1">Get help</h3> <a class="self-start btn rounded-md p-2 font-normal" href="https://github.com/JaneliaSciComp/ossi-website">
+Open an issue on GitHub
+</a> <a class="self-start btn rounded-md p-2 font-normal" href="placeholder@gmail.com">
+Reach out with a question
+</a> </div> <div class="flex flex-col gap-1"> <h3 class="font-bold mb-1">Cite this software</h3> <a class=" self-start border-b-2 transition ease-in duration-200 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer" href="https://janeliascicomp.github.io/ossi-website/">Cite the current deployment</a> </div> </div> </div> </div> <div class="col-start-1 col-span-4"> <div class="flex flex-col pb-12 lg:pb-0 lg:ml-6 bg-primary lg:bg-page items-center">   </div> <div class="mx-6 my-6 flex flex-col gap-1"> <div class="flex flex-wrap mb-2 gap-3"> <p class="font-semibold">Development Team:</p> <a class="self-start border-b-2 transition ease-in duration-200 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer" href="https://www.janelia.org/support-team/scientific-computing-software"> Scientific Computing Software </a> </div> <div class="flex flex-wrap mb-2 gap-3"> <p class="font-semibold">License:</p> BSD-3 Clause </div>   <div class="pt-6 flex flex-wrap gap-2"> <span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:var(--color-primary)"> Scientific Computing Software </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#ab3f32"> Javascript </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#8b8883"> BSD-3 Clause </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#5084ac"> Website </span> </div> </div> <section class="col-span-4 row-start-3 ml-6 prose prose-lg lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg"> <div class="my-6 md:mt-10"> <div class="border-t dark:border-slate-700"></div> </div> <!-- This is where any custom description of the project gets rendered --> <div><div id="readme" class="md" data-path="README.md"><article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 class="heading-element" dir="auto">Janelia Open Source Science Initative (OSSI) website</h1><a id="user-content-janelia-open-source-science-initative-ossi-website" class="anchor" aria-label="Permalink: Janelia Open Source Science Initative (OSSI) website" href="#janelia-open-source-science-initative-ossi-website"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><a href="https://janeliascicomp.github.io/ossi-website/" rel="nofollow"><strong>View the current deploy</strong></a></p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Overview</h2><a id="user-content-overview" class="anchor" aria-label="Permalink: Overview" href="#overview"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li>The source code for the Open Source Science Initative (OSSI) at HHMI Janelia website. The site showcases OSSI-supported projects.</li>
+<li>Built with the static-site-generator <a href="https://GitHub.com/withastro/astro">Astro</a>, using components and styling from the <a href="https://GitHub.com/onwidget/astrowind/tree/main">Astrowind</a> template.</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Table of Contents</h2><a id="user-content-table-of-contents" class="anchor" aria-label="Permalink: Table of Contents" href="#table-of-contents"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="#how-to-addedit-your-software-project">How to add/edit your software project</a>
+<ul dir="auto">
+<li><a href="#prerequisites">Prerequesites</a></li>
+<li><a href="#set-up">Set-up</a></li>
+<li><a href="#add-a-new-project">Add a new project</a></li>
+<li><a href="#edit-a-project">Edit a project</a>
+<ul dir="auto">
+<li><a href="#edit-the-frontmatter">Edit the frontmatter</a></li>
+<li><a href="#optional---edit-the-project-description">Optional - edit the project description</a></li>
+<li><a href="#optional---add-an-image">Optional - add an image</a></li>
+<li><a href="#optional---add-new-tag-categories-or-options">Optional - add new tag categories or options</a></li>
+</ul>
+</li>
+<li><a href="#preview-and-commit-your-changes">Preview and commit your changes</a></li>
+<li><a href="#open-a-pull-request">Open a pull request</a></li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">How to add/edit your software project</h2><a id="user-content-how-to-addedit-your-software-project" class="anchor" aria-label="Permalink: How to add/edit your software project" href="#how-to-addedit-your-software-project"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Prerequisites</h3><a id="user-content-prerequisites" class="anchor" aria-label="Permalink: Prerequisites" href="#prerequisites"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ol dir="auto">
+<li>A <a href="https://docs.GitHub.com/en/get-started/quickstart/creating-an-account-on-GitHub">GitHub account</a></li>
+<li>A code editor (e.g., <a href="https://code.visualstudio.com/download" rel="nofollow">Visual Studio Code</a>) and <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" rel="nofollow">Git</a> installed on your local computer</li>
+<li><a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm" rel="nofollow">Node.js</a> (v18.14.1 or later) and npm</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Set-up</h3><a id="user-content-set-up" class="anchor" aria-label="Permalink: Set-up" href="#set-up"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><strong>Note:</strong> These instructions assume you are familiar with the GitHub <a href="https://docs.GitHub.com/en/get-started/exploring-projects-on-GitHub/contributing-to-a-project">pull request flow</a> for contributing to projects.</p>
+<ol dir="auto">
+<li>
+<p dir="auto">Fork and clone the <a href="https://github.com/JaneliaSciComp/ossi-website">OSSI Website repository</a>.</p>
+</li>
+<li>
+<p dir="auto">Open the respository in your local code editor.</p>
+</li>
+<li>
+<p dir="auto">Install dependencies and start the local dev server at <code>localhost:4321</code>.</p>
+</li>
+</ol>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="npm install
+npm run dev"><pre class="notranslate"><code>npm install
+npm run dev
+</code></pre></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Add a new project</h3><a id="user-content-add-a-new-project" class="anchor" aria-label="Permalink: Add a new project" href="#add-a-new-project"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">If a Markdown file for your project already exists under <code>src/content/projects</code> - skip to <a href="#edit-a-project">Edit a project</a></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="/
+├── public/
+│   └── project-images/
+└── src/
+    └── project-template.md
+    └── content/
+        └── projects/"><pre lang="text" class="notranslate"><code>/
+├── public/
+│   └── project-images/
+└── src/
+    └── project-template.md
+    └── content/
+        └── projects/
+</code></pre></div>
+<ol dir="auto">
+<li>
+<p dir="auto">Copy <code>/src/project-template.md</code> and paste it into <code>/src/content/projects</code> (see key folders and files above). Rename the template with your project's title, e.g., <code>my-awesome-project.md</code>, with dashes connecting each word.</p>
+</li>
+<li>
+<p dir="auto">Open your project file. At the top of the file are data sandwiched between triple-dashes (---). These data are used by Astro to create the webpage for your project.</p>
+</li>
+<li>
+<p dir="auto"><strong>Edit the <code>title</code>- this should match the name of your project file, without the dashes.</strong> For example, if your project file is named <code>my-awesome-project.md</code>, your project title should be <code>my awesome project</code>.</p>
+</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Edit a project</h3><a id="user-content-edit-a-project" class="anchor" aria-label="Permalink: Edit a project" href="#edit-a-project"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Edit the frontmatter</h4><a id="user-content-edit-the-frontmatter" class="anchor" aria-label="Permalink: Edit the frontmatter" href="#edit-the-frontmatter"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">At the top of the file are data sandwiched between triple-dashes (---). These data are used by Astro to create the webpage for your project.</p>
+<p dir="auto">Follow the guidance in the below table to edit your project's data and change the appearance of your project's associated webpage.</p>
+<p dir="auto">You can also refer to <code>/src/project-template.md</code> for further guidance and examples for each data variable.</p>
+<p dir="auto"><strong>Notes:</strong></p>
+<ul dir="auto">
+<li>
+<p dir="auto">For each <em>required</em> variable, delete the placeholder text to the right of the colon in the template file and use the table guidance to provide your own value.</p>
+</li>
+<li>
+<p dir="auto">For each <em>optional</em> variable, if you do not wish to provide a value, comment out or delete the entire entry.</p>
+</li>
+<li>
+<p dir="auto"><strong>For "tag" variables:</strong></p>
+<ul dir="auto">
+<li>Tags are used to allow website visitors to filter displayed projects.</li>
+<li>We strive to keep the tag categories and example options up-to-date in the project template, but the final reference for the currently-allowed tag categories and options can always be found <a href="https://github.com/JaneliaSciComp/ossi-website/blob/main/.github/actions/validTagsList.json">here</a>.</li>
+<li>Delete any tags provided in the project template that don't apply to your project. Keep relevant tags inside the square brackets, separated by commas.</li>
+<li>If you feel there is an additional tag category or option required to describe your project - read the guidance on <a href="#optional---requesting-new-tag-categories-or-options">Requesting new tag categories or options</a>.</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Variable name</th>
+<th align="left">Required or optional</th>
+<th align="left">How to complete</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>title</code></td>
+<td align="left">Required</td>
+<td align="left">Your project title.</td>
+</tr>
+<tr>
+<td align="left"><code>tagline</code></td>
+<td align="left">Required</td>
+<td align="left">One or two sentences describing your project.</td>
+</tr>
+<tr>
+<td align="left"><code>maintainer</code></td>
+<td align="left">Required</td>
+<td align="left">The maintainer of the project page on this website. This should be the name of one primary point-of-contact.</td>
+</tr>
+<tr>
+<td align="left"><code>maintainer contact info</code></td>
+<td align="left">Required</td>
+<td align="left">The preferred contact method for the maintainer - this should either an email address or a link to a contact method such as X, Instagram, LinkedIn, or Facebook.</td>
+</tr>
+<tr>
+<td align="left"><code>project type</code></td>
+<td align="left">Required</td>
+<td align="left">Pick <strong>one</strong> of the three options provided in the template based on whether your software project is currently or was ever supported by OSSI: <code>[OSSI - current, OSSI - previous, Other]</code>. Delete the other two options, leaving the square brackets around your choice.</td>
+</tr>
+<tr>
+<td align="left"><code>OSSI proposal link</code></td>
+<td align="left">Required for current and previous OSSI-funded projects</td>
+<td align="left">Link to the OSSI proposal, written as a string (no square brackets).</td>
+</tr>
+<tr>
+<td align="left"><code>github link</code></td>
+<td align="left">Required</td>
+<td align="left">Link to the software project's GitHub repository.</td>
+</tr>
+<tr>
+<td align="left"><code>documentation link</code></td>
+<td align="left">Required</td>
+<td align="left">Link to software documentation - can be the same as the GitHub repo if the README is the documentation</td>
+</tr>
+<tr>
+<td align="left"><code>installation instructions link</code></td>
+<td align="left">Required</td>
+<td align="left">Link to software installation instructions - can be the same as the GitHub repo</td>
+</tr>
+<tr>
+<td align="left"><code>how to cite text</code></td>
+<td align="left">Required if your software has an associated published paper or DOI</td>
+<td align="left">The citation for your software - wrap in quotes to ensure colons are interpreted correctly. If your software doesn't have an associated published paper or DOI, leave this blank.</td>
+</tr>
+<tr>
+<td align="left"><code>how to cite link</code></td>
+<td align="left">Optional</td>
+<td align="left">A DOI. Wrap in quotes to ensure the colon is interpreted correctly. If a DOI is not available, leave this blank - your GitHub repo will be used as the default. Each DOI should start with <code>https://doi.org/</code></td>
+</tr>
+<tr>
+<td align="left"><code>additional links array</code></td>
+<td align="left">Optional</td>
+<td align="left">Optional external links formatted in a comma-separated array. If there is a colon in a link, wrap the entire link in quotations. For example, you could provide links to a project homepage, an externally-hosted blog post, additional publications, etc.</td>
+</tr>
+<tr>
+<td align="left"><code>additional links text array</code></td>
+<td align="left">Optional</td>
+<td align="left">If your project has an associated blog post file, provide the file name here in square brackets, without the .md extenstion (e.g., <code>[my-related-blog-post-file]</code>). If there is more than one related blog posts separate the file names by commas.</td>
+</tr>
+<tr>
+<td align="left"><code>image file</code></td>
+<td align="left">Optional</td>
+<td align="left">Format as: <code>image-file-name-with-no-spaces.fileExtension</code><br> Then see <a href="#optional---add-an-image">Adding an image</a> for more information about uploading an image.</td>
+</tr>
+<tr>
+<td align="left"><code>image caption</code></td>
+<td align="left">Required if you add an image file</td>
+<td align="left">A brief description of the image - this will be displayed on the site</td>
+</tr>
+<tr>
+<td align="left"><code>youtube url</code></td>
+<td align="left">Optional</td>
+<td align="left">Link to a YouTube-hosted video demoing your software.</td>
+</tr>
+<tr>
+<td align="left"><code>youtube caption</code></td>
+<td align="left">Required if you add a video link</td>
+<td align="left">A brief description of the video - this will be displayed on the site</td>
+</tr>
+<tr>
+<td align="left"><code>development team</code></td>
+<td align="left">Optional</td>
+<td align="left"><a href="#edit-a-project">Tag variable - see guidance</a></td>
+</tr>
+<tr>
+<td align="left"><code>programming language</code></td>
+<td align="left">Optional</td>
+<td align="left"><a href="#edit-a-project">Tag variable - see guidance</a></td>
+</tr>
+<tr>
+<td align="left"><code>open source license</code></td>
+<td align="left">Optional</td>
+<td align="left"><a href="#edit-a-project">Tag variable - see guidance</a></td>
+</tr>
+<tr>
+<td align="left"><code>software type</code></td>
+<td align="left">Optional</td>
+<td align="left"><a href="#edit-a-project">Tag variable - see guidance</a></td>
+</tr>
+<tr>
+<td align="left"><code>use case</code></td>
+<td align="left">Optional</td>
+<td align="left"><a href="#edit-a-project">Tag variable - see guidance</a></td>
+</tr>
+<tr>
+<td align="left"><code>usage environment</code></td>
+<td align="left">Optional</td>
+<td align="left"><a href="#edit-a-project">Tag variable - see guidance</a></td>
+</tr>
+<tr>
+<td align="left"><code>software ecosystem</code></td>
+<td align="left">Optional</td>
+<td align="left"><a href="#edit-a-project">Tag variable - see guidance</a></td>
+</tr>
+<tr>
+<td align="left"><code>supported file types</code></td>
+<td align="left">Optional</td>
+<td align="left"><a href="#edit-a-project">Tag variable - see guidance</a></td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Optional - Edit the project description</h4><a id="user-content-optional---edit-the-project-description" class="anchor" aria-label="Permalink: Optional - Edit the project description" href="#optional---edit-the-project-description"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">You are strongly encouraged to use your software project's GitHub README as it's description. This will minimize the amount of work required by the maintainer to keep the project description and details up-to-date.</p>
+<p dir="auto">To use your project's GitHub README as the project description:</p>
+<ol dir="auto">
+<li>Ensure your project is public on GitHub</li>
+<li>Delete all the text in your project's Markdown file following the closing triple dashes (---) on the frontmatter.</li>
+</ol>
+<p dir="auto">If you would rather provide a custom project description, you can do so by typing it below the closing triple dashes on the frontmatter. You can use <a href="https://www.markdownguide.org/basic-syntax/" rel="nofollow">Markdown syntax</a> to add hyperlinks, layout/text effects (e.g., headings, lists, <strong>bold</strong> or <em>italic</em> text), etc.</p>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Optional - Add an image</h4><a id="user-content-optional---add-an-image" class="anchor" aria-label="Permalink: Optional - Add an image" href="#optional---add-an-image"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ol dir="auto">
+<li>Add your desired image to <code>/public/project-images</code>, using a filename without spaces.</li>
+<li>Edit your project file to include a value for <code>image file</code> as outlined in <a href="#edit-a-project">Edit a project</a>.</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Optional - Requesting new tag categories or options</h4><a id="user-content-optional---requesting-new-tag-categories-or-options" class="anchor" aria-label="Permalink: Optional - Requesting new tag categories or options" href="#optional---requesting-new-tag-categories-or-options"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><em>Tag categories are the the variable name to the left of the colon in the project Markdown file.</em></li>
+<li><em>Tag options are the values in the square brackets to the right of the colon.</em></li>
+</ul>
+<p dir="auto"><em>Do not add the new tag category or option to your project's template.</em> Open a separate <a href="#open-a-pull-request">pull request</a> listing the new tag category(ies) and/or tag options(s) you wish to add. Make sure to select the "new tags added" label.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Preview and commit your changes</h3><a id="user-content-preview-and-commit-your-changes" class="anchor" aria-label="Permalink: Preview and commit your changes" href="#preview-and-commit-your-changes"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ol dir="auto">
+<li>Preview your changes on the local dev server at <code>localhost:4321</code>.</li>
+<li>When you're done editing the project file and adding optional images, commit your changes and push them to GitHub.</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Open a pull request</h3><a id="user-content-open-a-pull-request" class="anchor" aria-label="Permalink: Open a pull request" href="#open-a-pull-request"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ol dir="auto">
+<li>Go to your repository on GitHub - on the banner indicating your branch is one commit ahead, click <strong>Contribute</strong> and then <strong>Open a pull request</strong>.</li>
+<li>Title your pull request "Add a project - [Project Name]". Include in the description any helpful notes or specific requests.</li>
+<li>In the panel on the right side of the screen, click the gear icon next to "Labels." Select relevant labels, e.g.,:
+<ul dir="auto">
+<li>New Project Page</li>
+<li>Edit Project Page</li>
+<li>New tags</li>
+</ul>
+</li>
+<li>When you're finished, click "Create pull request" - your PR will be reviewed by the maintainers of the OSSI site. You may receive requests for changes before your PR is approved.</li>
+</ol>
+</article></div></div> <!-- If no custom description in the Markdown file, the project's GitHub README file is used--> </section> </div> </div> </div>  <footer class="relative border-t border-gray-200 dark:border-slate-800 not-prose"> <div class="dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div> <div class="relative l mx-auto px-4 sm:px-6 dark:text-slate-300"> <div class="flex justify-between items-start my-6"> <div> <div class="mb-2"> <a class="inline-block font-bold text-xl" href="/ossi-website">🔬 Janelia Software
+</a> </div> <div class="flex flex-col gap-2 text-sm text-muted"> <a class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out mr-2 rtl:mr-0 rtl:ml-2" href="https://www.hhmi.org/privacy-policy" target="_blank">Privacy Policy & Cookie Notice</a><a class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out mr-2 rtl:mr-0 rtl:ml-2" href="https://github.com/JaneliaSciComp/ossi-website" target="_blank">This site is open source! Contribute on GitHub.</a> </div> </div> <div class="w-24 min-[400px]:w-32 md:w-44"> <a href="https://www.janelia.org/" target="_blank"> <img src="/ossi-website/_astro/HHMI_Janelia_Logo-Black.YPERATnQ.png" alt="Logo for the Howard Hughes Medical Institute Janelia Research Campus" class="block dark:hidden"> <img src="/ossi-website/_astro/HHMI_Janelia_Logo-White.EXklwjQ9.png" alt="Logo for the Howard Hughes Medical Institute Janelia Research Campus" class="hidden dark:block"> </a> </div> </div> <div>  </div> <div class="md:flex md:items-center md:justify-between pb-6"> <ul class="flex mb-4 md:order-1 md:ml-4 md:mb-0"> <li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm pr-5 md:pr-0 md:pl-5 inline-flex items-center" aria-label="Email" href="#"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:mail">  <symbol id="ai:tabler:mail"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="m3 7l9 6l9-6"/></g></symbol><use xlink:href="#ai:tabler:mail"></use>  </svg>  </a> </li><li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm pr-5 md:pr-0 md:pl-5 inline-flex items-center" aria-label="X" href="#"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:brand-x">  <symbol id="ai:tabler:brand-x"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 4l11.733 16H20L8.267 4zm0 16l6.768-6.768m2.46-2.46L20 4"/></symbol><use xlink:href="#ai:tabler:brand-x"></use>  </svg>  </a> </li><li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm pr-5 md:pr-0 md:pl-5 inline-flex items-center" aria-label="Github" href="https://github.com/JaneliaSciComp"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:brand-github">  <symbol id="ai:tabler:brand-github"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.6-.6 1.2-.5 2V21"/></symbol><use xlink:href="#ai:tabler:brand-github"></use>  </svg>  </a> </li> </ul> <div class="text-sm mr-4 dark:text-slate-400"> © 2024 Howard Hughes Medical Institute </div> </div> </div> </footer>  </body> </html>
