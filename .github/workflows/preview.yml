@@ -31,7 +31,7 @@ env:
 
 jobs:
   build:
-    runs-on: composite
+    runs-on: ubuntu-latest
 
     steps:
       - name: Store environment variables
