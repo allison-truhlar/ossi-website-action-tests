@@ -1,0 +1,354 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="/pr-preview/pr-2/favicon.ico"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v4.6.2"><title>OSSI@Janelia</title><style is:global>
+  :root {
+    --font-sans: "Inter Variable";
+    --font-serif: var(--font-sans);
+    --font-heading: var(--font-sans);
+
+    /* --color-primary: rgb(30 64 175); */
+    --color-primary: rgb(5 141 150);
+    /* --color-secondary: rgb(30 58 138); */
+    --color-secondary: rgb(0 164 80);
+    /* --color-accent: rgb(109 40 217); */
+    --color-accent: rgb(63 194 205);
+
+    --color-text-heading: rgb(0 0 0);
+    --color-text-default: rgb(16 16 16);
+    --color-text-muted: rgb(16 16 16 / 66%);
+
+    --color-bg-page: rgb(255 255 255);
+    --color-bg-page-dark: rgb(3 6 32);
+
+    /* default color - this is dynamically updated by handleTagSelection */
+    --color-bg-selected-tag: var(--color-primary);
+  }
+
+  .dark {
+    --font-sans: "Inter Variable";
+    --font-serif: var(--font-sans);
+    --font-heading: var(--font-sans);
+
+    /* --color-primary: rgb(30 64 175); */
+    --color-primary: rgb(5 141 150);
+    /* --color-secondary: rgb(30 58 138); */
+    --color-secondary: rgb(0 164 80);
+    /* --color-accent: rgb(109 40 217); */
+    --color-accent: rgb(63 194 205);
+
+    --color-text-heading: rgb(0 0 0);
+    --color-text-default: rgb(229 236 246);
+    --color-text-muted: rgb(229 236 246 / 66%);
+
+    --color-bg-page: var(--color-bg-page-dark);
+
+    /* default color - this is dynamically updated by handleTagSelection */
+    --color-bg-selected-tag: var(--color-primary);
+  }
+</style><link rel="stylesheet" href="/pr-preview/pr-2/_astro/_slug_.DPN5iaBe.css">
+<style>.twitter-tweet:not(.twitter-tweet-rendered){padding:var(--tc-padding, 1em);border:1px solid var(--tc-border-color, #cfd9de)}.twitter-tweet:not(.twitter-tweet-rendered)>:first-child{margin-top:0}.twitter-tweet:not(.twitter-tweet-rendered)>:last-child{margin-bottom:0}lite-youtube{background-color:#000;position:relative;display:block;contain:content;background-position:center center;background-size:cover;cursor:pointer;max-width:720px}lite-youtube:before{content:attr(data-title);display:block;position:absolute;top:0;background-image:linear-gradient(180deg,#000000ab,#0000008a 14%,#00000026 54%,#0000000d 72%,#0000 94%);height:99px;width:100%;font-family:YouTube Noto,Roboto,Arial,Helvetica,sans-serif;color:#eee;text-shadow:0 0 2px rgba(0,0,0,.5);font-size:18px;padding:25px 20px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;box-sizing:border-box}lite-youtube:hover:before{color:#fff}lite-youtube:after{content:"";display:block;padding-bottom:56.25%}lite-youtube>iframe{width:100%;height:100%;position:absolute;top:0;left:0;border:0}lite-youtube>.lty-playbtn{display:block;width:100%;height:100%;background:no-repeat center/68px 48px;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg>');position:absolute;cursor:pointer;z-index:1;filter:grayscale(100%);transition:filter .1s cubic-bezier(0,0,.2,1);border:0}lite-youtube:hover>.lty-playbtn,lite-youtube .lty-playbtn:focus{filter:none}lite-youtube.lyt-activated{cursor:unset}lite-youtube.lyt-activated:before,lite-youtube.lyt-activated>.lty-playbtn{opacity:0;pointer-events:none}.lyt-visually-hidden{clip:rect(0 0 0 0);-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;overflow:hidden;position:absolute;white-space:nowrap;width:1px}lite-youtube>iframe{all:unset!important;width:100%!important;height:100%!important;position:absolute!important;inset:0!important;border:0!important}lite-vimeo{font-size:10px;background-color:#000;position:relative;display:block;contain:content;background-position:center center;background-size:cover}lite-vimeo:after{content:"";display:block;padding-bottom:56.25%}lite-vimeo>iframe{all:unset!important;width:100%!important;height:100%!important;position:absolute!important;inset:0!important;border:0!important}lite-vimeo>.ltv-playbtn{content:"";position:absolute;inset:0;width:100%;background:transparent;outline:0;border:0;cursor:pointer}lite-vimeo>.ltv-playbtn:before{width:6.5em;height:4em;background:#172322bf;opacity:.8;border-radius:.25rem;transition:all .2s cubic-bezier(0,0,.2,1)}lite-vimeo>.ltv-playbtn:focus:before{outline:auto}lite-vimeo:hover>.ltv-playbtn:before{background-color:#00adef;background-color:var(--ltv-color, #00adef);opacity:1}lite-vimeo>.ltv-playbtn:after{border-style:solid;border-width:1em 0 1em 1.7em;border-color:transparent transparent transparent #fff}lite-vimeo>.ltv-playbtn:before,lite-vimeo>.ltv-playbtn:after{content:"";position:absolute;top:50%;left:50%;transform:translate3d(-50%,-50%,0)}lite-vimeo.ltv-activated:before,lite-vimeo.ltv-activated>.ltv-playbtn{cursor:unset;opacity:0;pointer-events:none}
+</style><script type="module" src="/pr-preview/pr-2/_astro/hoisted.XVAdaamv.js"></script></head> <body class="text-default bg-page"> <header class="scroll fixed top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out" data-sticky-header="true" id="header"> <div class="absolute inset-0 bg-white dark:bg-dark"></div> <div class="relative text-default p-3 md:px-6 w-full flex justify-between"> <a class="flex items-center" href="/pr-preview/pr-2/tmp/pr-preview/pr-2"> <span class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl font-bold text-gray-900 whitespace-nowrap dark:text-white"></span> <span class="min-[600px]:hidden self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl lg:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"> 🔬   Janelia OSSI </span> <span class="hidden min-[600px]:block self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl lg:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"> 🔬   Janelia Open Source Science Initiative </span> </a> <div class="flex"> <div class="flex items-center lg:hidden order-2"> <button class="flex flex-col h-12 w-12 rounded justify-center items-center cursor-pointer group" aria-label="Toggle Menu" data-aw-toggle-menu> <span class="sr-only">Toggle Menu</span>  <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:rotate-45 group-[.expanded]:translate-y-2.5"></span> <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:opacity-0"></span> <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:-rotate-45 group-[.expanded]:-translate-y-2.5"></span>  </button> </div> <nav class="items-center w-full lg:w-auto hidden lg:flex text-default overflow-y-auto overflow-x-hidden lg:overflow-y-visible lg:overflow-x-auto lg:mx-5" aria-label="Main navigation"> <ul class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium"> <li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/pr-preview/pr-2"> Home </a> </li><li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/pr-preview/pr-2/tmp/pr-preview/pr-2/projects"> Projects </a> </li><li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/pr-preview/pr-2/tmp/pr-preview/pr-2/ecosystems"> Ecosystems </a> </li><li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/pr-preview/pr-2/tmp/pr-preview/pr-2/ossi"> OSSI </a> </li><li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/pr-preview/pr-2/tmp/pr-preview/pr-2/blog"> Blog </a> </li> </ul> </nav> <div id="toggle-theme" class="self-center flex items-center w-auto static justify-end"> <button type="button" class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="Toggle between Dark and Light mode" data-toggle-color-scheme> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6" data-icon="tabler:sun">  <symbol id="ai:tabler:sun"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0-8 0m-5 0h1m8-9v1m8 8h1m-9 8v1M5.6 5.6l.7.7m12.1-.7l-.7.7m0 11.4l.7.7m-12.1-.7l-.7.7"/></symbol><use xlink:href="#ai:tabler:sun"></use>  </svg> </button> </div> </div> </div> </header>  <div class="pt-24 pb-8 max-w-7xl mx-auto"> <a class="self-start mx-6 border-b-2 text-sm transition ease-in duration-200 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer" href="/pr-preview/pr-2/projects">
+Projects
+</a> <div class="flex flex-col lg:grid grid-cols-6"> <section class="row-start-1 row-span-1 col-span-4 pt-6 pb-8"> <h1 class="mx-6 text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading"> VVD Viewer </h1> <p class="mx-6 mt-6 md:mt-10 text-xl md:text-2xl text-muted dark:text-slate-400"> Develop documentation for the interactive VVD 3D viewer/renderer for very large image volumes. </p> </section> <div class="px-6 py-12 lg:p-0 lg:pl-12 row-start-1 row-span-2 col-start-5 col-span-2 bg-primary lg:bg-page dark:bg-slate-900"> <div class="p-6 rounded-md shadow-sm lg:shadow-none bg-page"> <h2 class="text-xl font-bold mb-6">Quick links</h2> <div class="flex flex-row flex-wrap gap-6 mx-auto"> <div class="flex flex-col gap-1 mr-8"> <h3 class="font-bold mb-1">Get started</h3> <a class="self-start flex items-center gap-1 transition ease-in duration-200 hover:bg-gray-100 dark:text-slate-300 dark:hover:bg-slate-800 cursor-pointer" href="https://github.com/JaneliaSciComp/VVDViewer"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5  inline-block" data-icon="tabler:square-chevron-right">  <symbol id="ai:tabler:square-chevron-right"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m11 9l3 3l-3 3"/><path d="M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></g></symbol><use xlink:href="#ai:tabler:square-chevron-right"></use>  </svg>
+Source code
+</a> <a class="self-start flex items-center gap-1 transition ease-in duration-200 hover:bg-gray-100 dark:text-slate-300 dark:hover:bg-slate-800 cursor-pointer" href="https://github.com/JaneliaSciComp/VVDViewer/wiki"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5  inline-block" data-icon="tabler:square-chevron-right">  <use xlink:href="#ai:tabler:square-chevron-right"></use>  </svg>
+Documentation
+</a> <a class="self-start flex items-center gap-1 transition ease-in duration-200 hover:bg-gray-100 dark:text-slate-300 dark:hover:bg-slate-800 cursor-pointer" href="https://github.com/JaneliaSciComp/VVDViewer?tab=readme-ov-file#building-vvdviewer"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5  inline-block" data-icon="tabler:square-chevron-right">  <use xlink:href="#ai:tabler:square-chevron-right"></use>  </svg>
+How to install
+</a> </div> <div class="flex flex-col gap-1 mr-8 md:mr-12"> <h3 class="font-bold mb-1">Get help</h3> <a class="self-start btn rounded-md p-2 font-normal" href="https://github.com/JaneliaSciComp/VVDViewer">
+Open an issue on GitHub
+</a> <a class="self-start btn rounded-md p-2 font-normal" href="placeholder@gmail.com">
+Reach out with a question
+</a> </div> <div class="flex flex-col gap-1"> <h3 class="font-bold mb-1">Cite this software</h3> <a class=" self-start border-b-2 transition ease-in duration-200 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer" href="https://github.com/JaneliaSciComp/VVDViewer">Cite the software on GitHub</a> </div> </div> </div> </div> <div class="col-start-1 col-span-4"> <div class="flex flex-col pb-12 lg:pb-0 lg:ml-6 bg-primary lg:bg-page items-center">   </div> <div class="mx-6 my-6 flex flex-col gap-1"> <div class="flex flex-wrap mb-2 gap-3"> <p class="font-semibold">Development Team:</p> <a class="self-start border-b-2 transition ease-in duration-200 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer" href="https://www.janelia.org/project-team/flylight"> FlyLight </a><a class="self-start border-b-2 transition ease-in duration-200 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer" href="https://www.janelia.org/support-team/scientific-computing-software"> Scientific Computing Software </a> </div> <div class="flex flex-wrap mb-2 gap-3"> <p class="font-semibold">License:</p> BSD-3 Clause </div>  <div class="flex flex-wrap mb-2 gap-3"><h3 class="font-bold mb-1">External links:</h3><div class="mb-1"><a class="self-start border-b-2 transition ease-in duration-200 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer" href="https://drive.google.com/file/d/1Mn_V_82wzQGgKOTy245qk7sATF9yp2vb/view"> OSSI funding proposal </a></div></div> <div class="pt-6 flex flex-wrap gap-2"> <span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:var(--color-primary)"> FlyLight </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:var(--color-primary)"> Scientific Computing Software </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#ab3f32"> C++ </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#8b8883"> BSD-3 Clause </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#5084ac"> Native application </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#ba5915"> Confocal light microscopy (LM) </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#ba5915"> Electron microscopy (EM) </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#ba5915"> Expansion microscopy (ExM) </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#ba5915"> Annotation </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#7b0249"> Local installation </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#24a3cc"> N5 </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#24a3cc"> SWC </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#24a3cc"> TIFF </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#24a3cc"> Zeiss CZI </span> </div> </div> <section class="col-span-4 row-start-3 ml-6 prose prose-lg lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg"> <div class="my-6 md:mt-10"> <div class="border-t dark:border-slate-700"></div> </div> <!-- This is where any custom description of the project gets rendered --> <div><div id="readme" class="md" data-path="README.md"><article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 class="heading-element" dir="auto">VVDViewer</h1><a id="user-content-vvdviewer" class="anchor" aria-label="Permalink: VVDViewer" href="#vvdviewer"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><a href="https://doi.org/10.5281/zenodo.5841616" rel="nofollow"><img src="https://camo.githubusercontent.com/98e846e383678916d7f882046bb20f17128e16cdc29d5aacd6725329ae6a53da/68747470733a2f2f7a656e6f646f2e6f72672f62616467652f444f492f31302e353238312f7a656e6f646f2e353834313631362e737667" alt="DOI" data-canonical-src="https://zenodo.org/badge/DOI/10.5281/zenodo.5841616.svg" style="max-width: 100%;"></a></p>
+<p dir="auto">This is the open-source repository for VVDViewer, an interactive rendering tool for confocal microscopy data visualization. It combines the rendering of multi-channel volume data and polygon mesh data, where the properties of each dataset can be adjusted independently and quickly. The tool is designed for neurobiologists, to better visualize the fluorescent-stained confocal samples. This code base started as a fork of <a href="https://github.com/SCIInstitute/fluorender">Fluorender</a>.</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Known Issues (for Mac)</h2><a id="user-content-known-issues-for-mac" class="anchor" aria-label="Permalink: Known Issues (for Mac)" href="#known-issues-for-mac"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">If you encounter the message 'VVDViewer can't be opened because Apple cannot check it for malicious software' on your Mac, please right-click the app and choose 'Open' from the context menu to launch it. Although the same security notification will appear, you will have the option to open it.</p>
+<p dir="auto">Older versions of VVDViewer might not be compatible with the latest Mac OS, Sonoma. If you encounter any issues on Sonoma, please ensure that VVDViewer is updated to the most recent version.</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Download</h2><a id="user-content-download" class="anchor" aria-label="Permalink: Download" href="#download"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Click this button to download tha latest VVDViewer:</p>
+<p dir="auto"><a href="https://github.com/JaneliaSciComp/VVDViewer/releases/latest"><img src="https://camo.githubusercontent.com/850cb45bc62bf0078e6b1485ced1b852946de1bbcbf353e0a382f1b9bb077e53/68747470733a2f2f696d672e736869656c64732e696f2f7374617469632f76313f7374796c653d666f722d7468652d6261646765266c6f676f3d266c6162656c3d266d6573736167653d446f776e6c6f616426636f6c6f723d306638336462" alt="download" data-canonical-src="https://img.shields.io/static/v1?style=for-the-badge&amp;logo=&amp;label=&amp;message=Download&amp;color=0f83db" style="max-width: 100%;"></a></p>
+<p dir="auto">If you get Vulkan-related errors, please try to update your graphics device driver.</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Documentation</h2><a id="user-content-documentation" class="anchor" aria-label="Permalink: Documentation" href="#documentation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">User Manual</h3><a id="user-content-user-manual" class="anchor" aria-label="Permalink: User Manual" href="#user-manual"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><a href="https://github.com/JaneliaSciComp/VVDViewer/wiki">https://github.com/JaneliaSciComp/VVDViewer/wiki</a></p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Using VVDViewer for large volume segmentation (by Joshua Lillvis)</h3><a id="user-content-using-vvdviewer-for-large-volume-segmentation-by-joshua-lillvis" class="anchor" aria-label="Permalink: Using VVDViewer for large volume segmentation (by Joshua Lillvis)" href="#using-vvdviewer-for-large-volume-segmentation-by-joshua-lillvis"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><a href="https://github.com/JaneliaSciComp/exllsm-circuit-reconstruction/blob/master/docs/NeuronSegmentation.md">https://github.com/JaneliaSciComp/exllsm-circuit-reconstruction/blob/master/docs/NeuronSegmentation.md</a></p>
+<p dir="auto">Joshua L Lillvis, Hideo Otsuna, Xiaoyu Ding, Igor Pisarev, Takashi Kawase, Jennifer Colonell, Konrad Rokicki, Cristian Goina, Ruixuan Gao, Amy Hu, Kaiyu Wang, John Bogovic, Daniel E Milkie, Linus Meienberg, Brett D Mensh, Edward S Boyden, Stephan Saalfeld, Paul W Tillberg, Barry J Dickson (2022) Rapid reconstruction of neural circuits using tissue expansion and light sheet microscopy <em>eLife</em> <a href="https://doi.org/10.7554/eLife.81248" rel="nofollow">11:e81248</a></p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Licenses</h2><a id="user-content-licenses" class="anchor" aria-label="Permalink: Licenses" href="#licenses"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">VVDViewer is open source software licensed under the <a href="LICENSE">BSD 3-Clause License</a>. You can also view the <a href="LICENSE_DEPENDENCIES.md">licenses for our dependencies</a>.</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Building VVDViewer</h2><a id="user-content-building-vvdviewer" class="anchor" aria-label="Permalink: Building VVDViewer" href="#building-vvdviewer"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Dependencies</h3><a id="user-content-dependencies" class="anchor" aria-label="Permalink: Dependencies" href="#dependencies"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li>Git (<a href="https://git-scm.com/" rel="nofollow">https://git-scm.com/</a>)</li>
+<li>CMake 2.6+ (<a href="http://www.cmake.org/" rel="nofollow">http://www.cmake.org/</a>)</li>
+<li>wxWidgets (<a href="https://github.com/wxWidgets/wxWidgets">https://github.com/wxWidgets/wxWidgets</a>)</li>
+<li>Windows 7+ : Visual Studio 11.0 2012+</li>
+<li>OSX 10.9+  : Latest Xcode and command line tools, homebrew</li>
+<li>Other platforms may work, but are not officially supported.</li>
+<li>Boost 1.59.0+ (<a href="http://www.boost.org/users/download/#live" rel="nofollow">http://www.boost.org/users/download/#live</a>)</li>
+</ul>
+<p dir="auto">We recommend building VVDViewer outside of the source tree. <br></p>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">OSX</h4><a id="user-content-osx" class="anchor" aria-label="Permalink: OSX" href="#osx"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div> 
+<ol dir="auto">
+<li>
+<p dir="auto">Clone the latest wxWidgets using GIT (<code>git clone <a href="https://github.com/wxWidgets/wxWidgets.git">https://github.com/wxWidgets/wxWidgets.git</a></code>).</p>
+<ul dir="auto">
+<li>The steps following will assume the wxWidgets root directory is at <code>~/wxWidgets</code></li>
+</ul>
+</li>
+<li>
+<p dir="auto">Build wxWidgets from the command line.</p>
+<ul dir="auto">
+<li>
+<p dir="auto"><code>cd ~/wxWidgets/</code></p>
+</li>
+<li>
+<p dir="auto"><code>mkdir mybuild</code></p>
+</li>
+<li>
+<p dir="auto"><code>cd mybuild</code></p>
+</li>
+<li>
+<p dir="auto"><code>../configure --disable-shared --enable-macosx_arch=x86_64 --enable-unicode --with-cocoa --enable-debug --with-macosx-version-min=10.9 --enable-stl --enable-std_containers --enable-std_iostreams --enable-std_string --enable-std_string_conv_in_wxstring --with-libpng --with-libtiff --with-libjpeg</code></p>
+</li>
+<li>
+<p dir="auto"><code>make</code></p>
+</li>
+<li>
+<p dir="auto"><code>make install</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p dir="auto">Get homebrew, boost, freetype, xz, libtiff, libjpeg, zlib, openssl and curl.</p>
+<ul dir="auto">
+<li>
+<p dir="auto"><code>ruby -e "$(curl -fsSL <a href="https://raw.githubusercontent.com/Homebrew/install/master/install" rel="nofollow">https://raw.githubusercontent.com/Homebrew/install/master/install</a>)"</code></p>
+</li>
+<li>
+<p dir="auto"><code>brew install boost</code></p>
+</li>
+<li>
+<p dir="auto"><code>brew install freetype</code></p>
+</li>
+<li>
+<p dir="auto"><code>brew install xz</code></p>
+</li>
+<li>
+<p dir="auto"><code>brew install libtiff</code></p>
+</li>
+<li>
+<p dir="auto"><code>brew link libtiff --force</code></p>
+</li>
+<li>
+<p dir="auto"><code>brew install jpeg</code></p>
+</li>
+<li>
+<p dir="auto"><code>brew link jpeg --force</code></p>
+</li>
+<li>
+<p dir="auto"><code>brew install zlib</code></p>
+</li>
+<li>
+<p dir="auto"><code>brew link zlib --force</code></p>
+</li>
+<li>
+<p dir="auto"><code>brew install openssl</code></p>
+</li>
+<li>
+<p dir="auto"><code>brew link openssl --force</code></p>
+</li>
+<li>
+<p dir="auto"><code>brew install curl --with-openssl</code></p>
+</li>
+<li>
+<p dir="auto"><code>brew link curl --force</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p dir="auto">Get and build VVDViewer</p>
+<ul dir="auto">
+<li>
+<p dir="auto"><code>git clone <a href="https://github.com/takashi310/VVD_Viewer.git">https://github.com/takashi310/VVD_Viewer.git</a></code><br></p>
+</li>
+<li>
+<p dir="auto"><code>mkdir build</code><br></p>
+</li>
+<li>
+<p dir="auto"><code>cd build</code><br></p>
+</li>
+<li>
+<p dir="auto"><code>cmake ../VVD_Viewer -G Xcode</code><br></p>
+</li>
+</ul>
+</li>
+<li>
+<p dir="auto">Open the Xcode file generated to build and run VVDViewer.</p>
+</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Windows</h4><a id="user-content-windows" class="anchor" aria-label="Permalink: Windows" href="#windows"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div> 
+<ol dir="auto">
+<li>
+<p dir="auto">Clone the latest wxWidgets using GIT (<code>git clone <a href="mailto:git@github.com">git@github.com</a>:wxWidgets/wxWidgets.git</code>).</p>
+<ul dir="auto">
+<li>The steps following will assume the wxWidgets repository is at <code>C:\wxWidgets</code></li>
+</ul>
+</li>
+<li>
+<p dir="auto">Open a 64 bit Visual Studio command prompt to build wxWidgets. (make sure you use the prompt version you wish to build all dependencies, IE , MSVC 14.0 2015 x64)</p>
+<ul dir="auto">
+<li>
+<p dir="auto">Go to directory <code>C:\wxWidgets\build\msw</code></p>
+</li>
+<li>
+<p dir="auto">Type <code>nmake /f makefile.vc TARGET_CPU=x64 BUILD=debug</code> to build debug libraries.</p>
+</li>
+<li>
+<p dir="auto">Type <code>nmake /f makefile.vc TARGET_CPU=x64 BUILD=release</code> to build release libraries.</p>
+</li>
+</ul>
+</li>
+<li>
+<p dir="auto">Download and build boost.</p>
+<ul dir="auto">
+<li>
+<p dir="auto">Download boost (<a href="http://www.boost.org/users/download/#live" rel="nofollow">http://www.boost.org/users/download/#live</a>) and extract onto your machine.</p>
+</li>
+<li>
+<p dir="auto">Build boost using <code>bootstrap.exe</code> and <code>b2.exe --toolset=msvc-11.0 --build-type=complete architecture=x86 address-model=64 stage</code> in the boost directory in a MSVC prompt. (change the toolset to the version of MSVC you are using, and omit address-model and architecture for 32-bit)</p>
+</li>
+<li>
+<p dir="auto">The steps following will assume the boost root directory is at <code>C:\boost_1_59_0</code> (your version might differ).</p>
+</li>
+<li>
+<p dir="auto">In a separate directory, checkout a separate boost process library : <code>git clone <a href="mailto:git@github.com">git@github.com</a>:basisunus/boost_process.git</code> and merge the contents into the boost directory you built in.</p>
+</li>
+</ul>
+</li>
+<li>
+<p dir="auto">Build or Download libjpeg, libtiff, openssl, zlib, openssl and curl.</p>
+<ul dir="auto">
+<li>If you use Visual Studio 12.0 2013+, also build ffmpeg.</li>
+</ul>
+</li>
+<li>
+<p dir="auto">You may need to add lines to <code>C:\Program Files (x86)\CMake X.X\share\cmake-x.x\Modules\FindwxWidgets.cmake</code> (x's are your version) for wxWidgets 3.* if it still complains that you haven't installed wxWidgets.</p>
+<ul dir="auto">
+<li>
+<p dir="auto">Starting about line 277, you will have listed a few sets of library versions to search for like <code>wxbase29${_UCD}${_DBG}</code> <br></p>
+</li>
+<li>
+<p dir="auto">In 4 places, you will need to add above each line with a "29" a new line that is exactly the same, but with a "31" instead, assuming your version of wxWidgets is 3.1.*). <br></p>
+</li>
+</ul>
+</li>
+<li>
+<p dir="auto">Download VVDViewer using Git <code>git clone <a href="https://github.com/takashi310/VVD_Viewer.git">https://github.com/takashi310/VVD_Viewer.git</a></code></p>
+</li>
+<li>
+<p dir="auto">Use the <code>C:\Program Files(x86)\CMake2.8\bin\cmake-gui.exe</code> program to configure build properties and generate your Visual Studio Solution file. (Remember to keep your MSVC version consistent)</p>
+<ul dir="auto">
+<li>Select your VVDViewer source and build directories (create a new folder for building), and add the locations of boost and wxWidgets. <br></li>
+</ul>
+<ul dir="auto">
+<li>
+<p dir="auto">Choose the VVDViewer main folder for source and create a new folder for the build. <br></p>
+</li>
+<li>
+<p dir="auto">Click Configure.  NOTE: You may need to display advanced options to set below options. <br></p>
+</li>
+<li>
+<p dir="auto">Choose the build type <code>CMAKE_BUILD_TYPE</code> to be "Debug" or "Release" <br></p>
+</li>
+<li>
+<p dir="auto">Be sure to set <code>wxWidgets_LIB_DIR</code> to <code>C:\wxWidgets\lib\vc_x64_lib</code>. (this will differ from 32 bit)</p>
+</li>
+<li>
+<p dir="auto">Be sure to set <code>wxWidgets_ROOT_DIR</code> to <code>C:\wxWidgets</code>.</p>
+</li>
+<li>
+<p dir="auto">Be sure to set <code>Boost_INCLUDE_DIR</code> to <code>C:\boost_1_59_0</code> (assuming this is your boost dir). <br></p>
+</li>
+<li>
+<p dir="auto">Be sure to set <code>Boost_INCLUDE_DIR</code> to <code>C:\boost_1_59_0</code> (assuming this is your boost dir). <br></p>
+</li>
+<li>
+<p dir="auto">Be sure to set <code>Boost_CHRONO_LIBRARY_DEBUG</code> to <code>C:\boost_1_59_0\x64\lib\libboost_chrono-vc110-mt-gd-1_59.lib</code> (assuming this is your boost dir). <br></p>
+</li>
+<li>
+<p dir="auto">Be sure to set <code>Boost_CHRONO_LIBRARY_RELEASE</code> to <code>C:\boost_1_59_0\x64\lib\libboost_chrono-vc110-mt-s-1_59.lib</code> (assuming this is your boost dir). <br></p>
+</li>
+<li>
+<p dir="auto">Be sure to set <code>Boost_SYSTEM_LIBRARY_DEBUG</code> to <code>C:\boost_1_59_0\x64\lib\libboost_system-vc110-mt-gd-1_59.lib</code> (assuming this is your boost dir). <br></p>
+</li>
+<li>
+<p dir="auto">Be sure to set <code>Boost_SYSTEM_LIBRARY_RELEASE</code> to <code>C:\boost_1_59_0\x64\lib\libboost_system-vc110-mt-s-1_59.lib</code> (assuming this is your boost dir). <br></p>
+</li>
+<li>
+<p dir="auto">Be sure to set <code>CURL_INCLUDE_DIR</code> to <code>C:\libcurl</code> (assuming this is your libcurl dir). <br></p>
+</li>
+<li>
+<p dir="auto">Be sure to set <code>CURL_LIBRARY</code> to <code>C:\libcurl\libcurl.lib</code> (assuming this is your libcurl dir). <br></p>
+</li>
+<li>
+<p dir="auto">Be sure to set <code>JPEG_INCLUDE_DIR</code> to <code>C:\libjpeg</code> (assuming this is your libjpeg dir). <br></p>
+</li>
+<li>
+<p dir="auto">Be sure to set <code>JPEG_LIBRARY</code> to <code>C:\libjpeg\jpeg.lib</code> (assuming this is your libjpeg dir). <br></p>
+</li>
+<li>
+<p dir="auto">Be sure to set <code>ZLIB_INCLUDE_DIR</code> to <code>C:\zlib</code> (assuming this is your zlib dir). <br></p>
+</li>
+<li>
+<p dir="auto">Be sure to set <code>ZLIB_LIBRARY</code> to <code>C:\zlib\zlib.lib</code> (assuming this is your zlib dir). <br></p>
+</li>
+<li>
+<p dir="auto">Be sure to set <code>LIB_EAY_DEBUG</code> and <code>LIB_EAY_RELEASE</code> to <code>C:\openssl\lib\libeay32.lib</code> (assuming this is your openssl dir). <br></p>
+</li>
+<li>
+<p dir="auto">Be sure to set <code>SSL_EAY_DEBUG</code> and <code>SSL_EAY_RELEASE</code> to <code>C:\openssl\lib\ssleay32.lib</code> (assuming this is your openssl dir). <br></p>
+</li>
+<li>
+<p dir="auto">If you use Visual Studio 12.0 2013+, delete all files in <code>VVD_Viewer\fluorender\ffmpeg\Win64</code> and copy your ffmpeg files in <code>C:\ffmpeg</code> (assuming this is your ffmpeg dir). <br></p>
+</li>
+<li>
+<p dir="auto">Click Generate.</p>
+</li>
+</ul>
+<ul dir="auto">
+<li>You may also generate using the command prompt, but you must explicitly type the paths for the cmake command. <br></li>
+</ul>
+<ul dir="auto">
+<li>
+<p dir="auto">Open Visual Studio Command Prompt. Go to the CMakeLists.txt directory. <br></p>
+</li>
+<li>
+<p dir="auto">Type <code> cmake -G "Visual Studio 14 2015 Win64" -DwxWidgets_LIB_DIR="C:\wxWidgets\lib\vc_x64_lib" -DwxWidgets_ROOT_DIR="C:\wxWidgets" -DBoost_INCLUDE_DIR="C:\boost_1_55_0" -DCMAKE_BUILD_TYPE="Debug" ..</code> in your build directory (again assuming these are your directory locations / Generator versions, and the build folder is in the VVDViewer root directory). <br></p>
+</li>
+</ul>
+<ul dir="auto">
+<li>
+<p dir="auto">Open the Visual Studio SLN file generated by CMake (found in your "build" directory). <br></p>
+</li>
+<li>
+<p dir="auto">Build the solution. Use CMake to generate both "Release" and "Debug" configurations if you wish to build both in Visual Studio.<br><br>
+<strong>Notes for Visual Studio</strong></p>
+</li>
+</ul>
+<ul dir="auto">
+<li>
+<p dir="auto">Visual Studio may not set the correct machine target when building 64 bit.
+Check <code>Project Properties -&gt; Configuration Properties -&gt; Linker -&gt; Command line</code>. Make sure "Additional Options" is <code>/machine:X64</code> NOT <code>/machine:X86</code>. <br></p>
+</li>
+<li>
+<p dir="auto">You may need to right-click VVD_Viewer project on the Solution Explorer to "Set as StartUp Project" for it to run. <br></p>
+</li>
+<li>
+<p dir="auto">If you are building on Windows 8 or later, you will need to set a Visual Studio Graphics Option. This enables the application to build in higher definition.<br>
+<code>Project Properties -&gt; Manifest Tool -&gt; Input and Output -&gt; Enable DPI Awareness -&gt; Yes </code> <br></p>
+</li>
+</ul>
+</li>
+</ol>
+</article></div></div> <!-- If no custom description in the Markdown file, the project's GitHub README file is used--> </section> </div> </div> </div>  <footer class="relative border-t border-gray-200 dark:border-slate-800 not-prose"> <div class="dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div> <div class="relative l mx-auto px-4 sm:px-6 dark:text-slate-300"> <div class="flex justify-between items-start my-6"> <div> <div class="mb-2"> <a class="inline-block font-bold text-xl" href="/pr-preview/pr-2/tmp/pr-preview/pr-2">🔬 Janelia Software
+</a> </div> <div class="flex flex-col gap-2 text-sm text-muted"> <a class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out mr-2 rtl:mr-0 rtl:ml-2" href="https://www.hhmi.org/privacy-policy" target="_blank">Privacy Policy & Cookie Notice</a><a class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out mr-2 rtl:mr-0 rtl:ml-2" href="https://github.com/JaneliaSciComp/ossi-website" target="_blank">This site is open source! Contribute on GitHub.</a> </div> </div> <div class="w-24 min-[400px]:w-32 md:w-44"> <a href="https://www.janelia.org/" target="_blank"> <img src="/pr-preview/pr-2/_astro/HHMI_Janelia_Logo-Black.YPERATnQ.png" alt="Logo for the Howard Hughes Medical Institute Janelia Research Campus" class="block dark:hidden"> <img src="/pr-preview/pr-2/_astro/HHMI_Janelia_Logo-White.EXklwjQ9.png" alt="Logo for the Howard Hughes Medical Institute Janelia Research Campus" class="hidden dark:block"> </a> </div> </div> <div>  </div> <div class="md:flex md:items-center md:justify-between pb-6"> <ul class="flex mb-4 md:order-1 md:ml-4 md:mb-0"> <li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm pr-5 md:pr-0 md:pl-5 inline-flex items-center" aria-label="Email" href="#"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:mail">  <symbol id="ai:tabler:mail"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="m3 7l9 6l9-6"/></g></symbol><use xlink:href="#ai:tabler:mail"></use>  </svg>  </a> </li><li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm pr-5 md:pr-0 md:pl-5 inline-flex items-center" aria-label="X" href="#"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:brand-x">  <symbol id="ai:tabler:brand-x"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 4l11.733 16H20L8.267 4zm0 16l6.768-6.768m2.46-2.46L20 4"/></symbol><use xlink:href="#ai:tabler:brand-x"></use>  </svg>  </a> </li><li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm pr-5 md:pr-0 md:pl-5 inline-flex items-center" aria-label="Github" href="https://github.com/JaneliaSciComp"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:brand-github">  <symbol id="ai:tabler:brand-github"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.6-.6 1.2-.5 2V21"/></symbol><use xlink:href="#ai:tabler:brand-github"></use>  </svg>  </a> </li> </ul> <div class="text-sm mr-4 dark:text-slate-400"> © 2024 Howard Hughes Medical Institute </div> </div> </div> </footer>  </body> </html>
