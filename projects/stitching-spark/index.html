@@ -1,0 +1,326 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/favicon.ico"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v4.6.2"><title>OSSI@Janelia</title><style is:global>
+  :root {
+    --font-sans: "Inter Variable";
+    --font-serif: var(--font-sans);
+    --font-heading: var(--font-sans);
+
+    /* --color-primary: rgb(30 64 175); */
+    --color-primary: rgb(5 141 150);
+    /* --color-secondary: rgb(30 58 138); */
+    --color-secondary: rgb(0 164 80);
+    /* --color-accent: rgb(109 40 217); */
+    --color-accent: rgb(63 194 205);
+
+    --color-text-heading: rgb(0 0 0);
+    --color-text-default: rgb(16 16 16);
+    --color-text-muted: rgb(16 16 16 / 66%);
+
+    --color-bg-page: rgb(255 255 255);
+    --color-bg-page-dark: rgb(3 6 32);
+
+    /* default color - this is dynamically updated by handleTagSelection */
+    --color-bg-selected-tag: var(--color-primary);
+  }
+
+  .dark {
+    --font-sans: "Inter Variable";
+    --font-serif: var(--font-sans);
+    --font-heading: var(--font-sans);
+
+    /* --color-primary: rgb(30 64 175); */
+    --color-primary: rgb(5 141 150);
+    /* --color-secondary: rgb(30 58 138); */
+    --color-secondary: rgb(0 164 80);
+    /* --color-accent: rgb(109 40 217); */
+    --color-accent: rgb(63 194 205);
+
+    --color-text-heading: rgb(0 0 0);
+    --color-text-default: rgb(229 236 246);
+    --color-text-muted: rgb(229 236 246 / 66%);
+
+    --color-bg-page: var(--color-bg-page-dark);
+
+    /* default color - this is dynamically updated by handleTagSelection */
+    --color-bg-selected-tag: var(--color-primary);
+  }
+</style><link rel="stylesheet" href="/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/_astro/_slug_.B7hbfkaU.css">
+<style>.twitter-tweet:not(.twitter-tweet-rendered){padding:var(--tc-padding, 1em);border:1px solid var(--tc-border-color, #cfd9de)}.twitter-tweet:not(.twitter-tweet-rendered)>:first-child{margin-top:0}.twitter-tweet:not(.twitter-tweet-rendered)>:last-child{margin-bottom:0}lite-youtube{background-color:#000;position:relative;display:block;contain:content;background-position:center center;background-size:cover;cursor:pointer;max-width:720px}lite-youtube:before{content:attr(data-title);display:block;position:absolute;top:0;background-image:linear-gradient(180deg,#000000ab,#0000008a 14%,#00000026 54%,#0000000d 72%,#0000 94%);height:99px;width:100%;font-family:YouTube Noto,Roboto,Arial,Helvetica,sans-serif;color:#eee;text-shadow:0 0 2px rgba(0,0,0,.5);font-size:18px;padding:25px 20px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;box-sizing:border-box}lite-youtube:hover:before{color:#fff}lite-youtube:after{content:"";display:block;padding-bottom:56.25%}lite-youtube>iframe{width:100%;height:100%;position:absolute;top:0;left:0;border:0}lite-youtube>.lty-playbtn{display:block;width:100%;height:100%;background:no-repeat center/68px 48px;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg>');position:absolute;cursor:pointer;z-index:1;filter:grayscale(100%);transition:filter .1s cubic-bezier(0,0,.2,1);border:0}lite-youtube:hover>.lty-playbtn,lite-youtube .lty-playbtn:focus{filter:none}lite-youtube.lyt-activated{cursor:unset}lite-youtube.lyt-activated:before,lite-youtube.lyt-activated>.lty-playbtn{opacity:0;pointer-events:none}.lyt-visually-hidden{clip:rect(0 0 0 0);-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;overflow:hidden;position:absolute;white-space:nowrap;width:1px}lite-youtube>iframe{all:unset!important;width:100%!important;height:100%!important;position:absolute!important;inset:0!important;border:0!important}lite-vimeo{font-size:10px;background-color:#000;position:relative;display:block;contain:content;background-position:center center;background-size:cover}lite-vimeo:after{content:"";display:block;padding-bottom:56.25%}lite-vimeo>iframe{all:unset!important;width:100%!important;height:100%!important;position:absolute!important;inset:0!important;border:0!important}lite-vimeo>.ltv-playbtn{content:"";position:absolute;inset:0;width:100%;background:transparent;outline:0;border:0;cursor:pointer}lite-vimeo>.ltv-playbtn:before{width:6.5em;height:4em;background:#172322bf;opacity:.8;border-radius:.25rem;transition:all .2s cubic-bezier(0,0,.2,1)}lite-vimeo>.ltv-playbtn:focus:before{outline:auto}lite-vimeo:hover>.ltv-playbtn:before{background-color:#00adef;background-color:var(--ltv-color, #00adef);opacity:1}lite-vimeo>.ltv-playbtn:after{border-style:solid;border-width:1em 0 1em 1.7em;border-color:transparent transparent transparent #fff}lite-vimeo>.ltv-playbtn:before,lite-vimeo>.ltv-playbtn:after{content:"";position:absolute;top:50%;left:50%;transform:translate3d(-50%,-50%,0)}lite-vimeo.ltv-activated:before,lite-vimeo.ltv-activated>.ltv-playbtn{cursor:unset;opacity:0;pointer-events:none}
+</style><script type="module" src="/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/_astro/hoisted.XVAdaamv.js"></script></head> <body class="text-default bg-page"> <header class="scroll fixed top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out" data-sticky-header="true" id="header"> <div class="absolute inset-0 bg-white dark:bg-dark"></div> <div class="relative text-default p-3 md:px-6 w-full flex justify-between"> <a class="flex items-center" href="/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2"> <span class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl font-bold text-gray-900 whitespace-nowrap dark:text-white"></span> <span class="min-[600px]:hidden self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl lg:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"> 🔬   Janelia OSSI </span> <span class="hidden min-[600px]:block self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl lg:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"> 🔬   Janelia Open Source Science Initiative </span> </a> <div class="flex"> <div class="flex items-center lg:hidden order-2"> <button class="flex flex-col h-12 w-12 rounded justify-center items-center cursor-pointer group" aria-label="Toggle Menu" data-aw-toggle-menu> <span class="sr-only">Toggle Menu</span>  <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:rotate-45 group-[.expanded]:translate-y-2.5"></span> <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:opacity-0"></span> <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:-rotate-45 group-[.expanded]:-translate-y-2.5"></span>  </button> </div> <nav class="items-center w-full lg:w-auto hidden lg:flex text-default overflow-y-auto overflow-x-hidden lg:overflow-y-visible lg:overflow-x-auto lg:mx-5" aria-label="Main navigation"> <ul class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium"> <li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2"> Home </a> </li><li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/projects"> Projects </a> </li><li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/ecosystems"> Ecosystems </a> </li><li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/ossi"> OSSI </a> </li><li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/blog"> Blog </a> </li> </ul> </nav> <div id="toggle-theme" class="self-center flex items-center w-auto static justify-end"> <button type="button" class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="Toggle between Dark and Light mode" data-toggle-color-scheme> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6" data-icon="tabler:sun">  <symbol id="ai:tabler:sun"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0-8 0m-5 0h1m8-9v1m8 8h1m-9 8v1M5.6 5.6l.7.7m12.1-.7l-.7.7m0 11.4l.7.7m-12.1-.7l-.7.7"/></symbol><use xlink:href="#ai:tabler:sun"></use>  </svg> </button> </div> </div> </div> </header>  <div class="pt-24 pb-8 max-w-7xl mx-auto"> <a class="self-start mx-6 border-b-2 text-sm transition ease-in duration-200 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer" href="/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/projects">
+Projects
+</a> <div class="flex flex-col lg:grid grid-cols-6"> <section class="row-start-1 row-span-1 col-span-4 pt-6 pb-8"> <h1 class="mx-6 text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading"> Stitching-Spark </h1> <p class="mx-6 mt-6 md:mt-10 text-xl md:text-2xl text-muted dark:text-slate-400"> Reconstructing large microscopy images from overlapping image tiles on a high-performance Spark cluster. </p> </section> <div class="px-6 py-12 lg:p-0 lg:pl-12 row-start-1 row-span-2 col-start-5 col-span-2 bg-primary lg:bg-page dark:bg-slate-900"> <div class="p-6 rounded-md shadow-sm lg:shadow-none bg-page"> <h2 class="text-xl font-bold mb-6">Quick links</h2> <div class="flex flex-row flex-wrap gap-6 mx-auto"> <div class="flex flex-col gap-1 mr-8"> <h3 class="font-bold mb-1">Get started</h3> <a class="self-start flex items-center gap-1 transition ease-in duration-200 hover:bg-gray-100 dark:text-slate-300 dark:hover:bg-slate-800 cursor-pointer" href="https://github.com/saalfeldlab/stitching-spark"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5  inline-block" data-icon="tabler:square-chevron-right">  <symbol id="ai:tabler:square-chevron-right"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m11 9l3 3l-3 3"/><path d="M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></g></symbol><use xlink:href="#ai:tabler:square-chevron-right"></use>  </svg>
+Source code
+</a> <a class="self-start flex items-center gap-1 transition ease-in duration-200 hover:bg-gray-100 dark:text-slate-300 dark:hover:bg-slate-800 cursor-pointer" href="https://github.com/saalfeldlab/stitching-spark"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5  inline-block" data-icon="tabler:square-chevron-right">  <use xlink:href="#ai:tabler:square-chevron-right"></use>  </svg>
+Documentation
+</a> <a class="self-start flex items-center gap-1 transition ease-in duration-200 hover:bg-gray-100 dark:text-slate-300 dark:hover:bg-slate-800 cursor-pointer" href="https://github.com/saalfeldlab/stitching-spark?tab=readme-ov-file#usage"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5  inline-block" data-icon="tabler:square-chevron-right">  <use xlink:href="#ai:tabler:square-chevron-right"></use>  </svg>
+How to install
+</a> </div> <div class="flex flex-col gap-1 mr-8 md:mr-12"> <h3 class="font-bold mb-1">Get help</h3> <a class="self-start btn rounded-md p-2 font-normal" href="https://github.com/saalfeldlab/stitching-spark">
+Open an issue on GitHub
+</a> <a class="self-start btn rounded-md p-2 font-normal" href="placeholder@gmail.com">
+Reach out with a question
+</a> </div> <div class="flex flex-col gap-1"> <h3 class="font-bold mb-1">Cite this software</h3> <a class=" self-start border-b-2 transition ease-in duration-200 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer" href="https://doi.org/10.1126/science.aau8302">Gao, R., Asano, S. M., Upadhyayula, S., Pisarev, I., Milkie, D. E., Liu, T. L., Singh, V., Graves, A., Huynh, G. H., Zhao, Y., Bogovic, J., Colonell, J., Ott, C. M., Zugates, C., Tappan, S., Rodriguez, A., Mosaliganti, K. R., Sheu, S. H., Pasolli, H. A., ... Betzig, E. (2019). Cortical column and whole-brain imaging with molecular contrast and nanoscale resolution. Science, 363(6424), Article eaau8302. https://doi.org/10.1126/science.aau8302</a> </div> </div> </div> </div> <div class="col-start-1 col-span-4"> <div class="flex flex-col pb-12 lg:pb-0 lg:ml-6 bg-primary lg:bg-page items-center">   </div> <div class="mx-6 my-6 flex flex-col gap-1"> <div class="flex flex-wrap mb-2 gap-3"> <p class="font-semibold">Development Team:</p> <a class="self-start border-b-2 transition ease-in duration-200 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer" href="https://www.janelia.org/lab/saalfeld-lab"> Saalfeld Lab </a><a class="self-start border-b-2 transition ease-in duration-200 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer" href="https://github.com/JaneliaSciComp/multifish"> MultiFISH </a><a class="self-start border-b-2 transition ease-in duration-200 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer" href="https://www.janelia.org/support-team/scientific-computing-software"> Scientific Computing Software </a> </div> <div class="flex flex-wrap mb-2 gap-3"> <p class="font-semibold">License:</p> BSD-3 Clause </div>  <div class="flex flex-wrap mb-2 gap-3"><h3 class="font-bold mb-1">External links:</h3><div class="mb-1"><a class="self-start border-b-2 transition ease-in duration-200 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer" href="https://drive.google.com/file/d/17m9LCBOg_YXQj0Q_LOsGYDOnSd_88ONJ/view"> OSSI funding proposal </a></div></div> <div class="pt-6 flex flex-wrap gap-2"> <span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:var(--color-primary)"> Saalfeld Lab </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:var(--color-primary)"> MultiFISH </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:var(--color-primary)"> Scientific Computing Software </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#ab3f32"> Java </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#ab3f32"> Nextflow </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#8b8883"> BSD-3 Clause </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#5084ac"> Package </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#ba5915"> Expansion microscopy (ExM) </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#ba5915"> Lightsheet fluorescence microscopy (LFSM) </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#ba5915"> Spatial transcriptomics </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#ba5915"> Image registration </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#7b0249"> Cloud </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#7b0249"> HPC cluster </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#7b0249"> Local installation </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:var(--color-accent)"> BigDataViewer </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:var(--color-accent)"> ImgLib2 </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#24a3cc"> N5 </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#24a3cc"> TIFF </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#24a3cc"> Zeiss CZI </span> </div> </div> <section class="col-span-4 row-start-3 ml-6 prose prose-lg lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg"> <div class="my-6 md:mt-10"> <div class="border-t dark:border-slate-700"></div> </div> <!-- This is where any custom description of the project gets rendered --> <div><div id="readme" class="md" data-path="README.md"><article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 class="heading-element" dir="auto">stitching-spark</h1><a id="user-content-stitching-spark" class="anchor" aria-label="Permalink: stitching-spark" href="#stitching-spark"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Reconstructing large microscopy images from overlapping image tiles on a high-performance Spark cluster.</p>
+<p dir="auto">The code is based on the Stitching plugin for Fiji <a href="https://github.com/fiji/Stitching">https://github.com/fiji/Stitching</a></p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Usage</h2><a id="user-content-usage" class="anchor" aria-label="Permalink: Usage" href="#usage"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">1. Building the package</h3><a id="user-content-1-building-the-package" class="anchor" aria-label="Permalink: 1. Building the package" href="#1-building-the-package"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Clone the repository with submodules:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="git clone --recursive https://github.com/saalfeldlab/stitching-spark.git"><pre>git clone --recursive https://github.com/saalfeldlab/stitching-spark.git</pre></div>
+<p dir="auto">If you have already cloned the repository, run this after cloning to fetch the submodules:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="git submodule update --init --recursive"><pre>git submodule update --init --recursive</pre></div>
+<p dir="auto">The application can be executed on Janelia cluster or locally. Build the package for the desired execution environment:</p>
+<details>
+<summary><b>Compile for running on Janelia cluster</b></summary>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="python build.py"><pre>python build.py</pre></div>
+</details>
+<details>
+<summary><b>Compile for running on local machine</b></summary>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="python build-spark-local.py"><pre>python build-spark-local.py</pre></div>
+</details>
+<br>
+<p dir="auto">The scripts for starting the application are located under <code>startup-scripts/spark-janelia</code> and <code>startup-scripts/spark-local</code>, and their usage is explained in the next steps.</p>
+<p dir="auto">If running locally, you can access the Spark job tracker at <a href="http://localhost:4040/" rel="nofollow">http://localhost:4040/</a> to monitor the progress of the tasks.</p>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">If running on public platforms such as AWS or Google Cloud:</h4><a id="user-content-if-running-on-public-platforms-such-as-aws-or-google-cloud" class="anchor" aria-label="Permalink: If running on public platforms such as AWS or Google Cloud:" href="#if-running-on-public-platforms-such-as-aws-or-google-cloud"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li>Compile with <code>python build.py</code>. This will include embed required dependencies into the final package, except for the Spark which is provided by the respective target platform at runtime.</li>
+<li>For running the pipeline, refer to the wiki pages <a href="https://github.com/saalfeldlab/stitching-spark/wiki/Running-on-Amazon-Web-Services">Running on AWS</a> and <a href="https://github.com/saalfeldlab/stitching-spark/wiki/Running-on-Google-Cloud">Running on Google Cloud</a></li>
+<li>The currently used Spark version is <strong>2.3.1</strong> — make sure you're requesting the same version when submitting a job</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">2. Preparing input tile configuration files</h3><a id="user-content-2-preparing-input-tile-configuration-files" class="anchor" aria-label="Permalink: 2. Preparing input tile configuration files" href="#2-preparing-input-tile-configuration-files"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">The application uses JSON to store metadata about tile configurations. These metadata include:</p>
+<ul dir="auto">
+<li>list of all tiles in the acquisition grouped by channel</li>
+<li>position and size of each tile in pixels</li>
+<li>pixel resolution (physical size of the pixel/voxel) in microns</li>
+<li>image data type</li>
+</ul>
+<p dir="auto">Example of the JSON metadata file (one JSON file per image channel):</p>
+<p dir="auto"><em>ch0.json:</em></p>
+<div class="highlight highlight-source-json notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="[
+{
+  &quot;index&quot; : 0,
+  &quot;file&quot; : &quot;FCF_CSMH__54383_20121206_35_C3_zb15_zt01_63X_0-0-0_R1_L086_20130108192758780.lsm.tif&quot;,
+  &quot;position&quot; : [0.0, 0.0, 0.0],
+  &quot;size&quot; : [991, 992, 880],
+  &quot;pixelResolution&quot; : [0.097,0.097,0.18],
+  &quot;type&quot; : &quot;GRAY16&quot;
+},
+{
+  &quot;index&quot; : 1,
+  &quot;file&quot; : &quot;FCF_CSMH__54383_20121206_35_C3_zb15_zt01_63X_0-0-0_R1_L087_20130108192825183.lsm.tif&quot;,
+  &quot;position&quot; : [700, -694.0887500300357, -77.41783189603937],
+  &quot;size&quot; : [991, 992, 880],
+  &quot;pixelResolution&quot; : [0.097,0.097,0.18],
+  &quot;type&quot; : &quot;GRAY16&quot;
+}
+]"><pre>[
+{
+  <span class="pl-ent">"index"</span> : <span class="pl-c1">0</span>,
+  <span class="pl-ent">"file"</span> : <span class="pl-s"><span class="pl-pds">"</span>FCF_CSMH__54383_20121206_35_C3_zb15_zt01_63X_0-0-0_R1_L086_20130108192758780.lsm.tif<span class="pl-pds">"</span></span>,
+  <span class="pl-ent">"position"</span> : [<span class="pl-c1">0.0</span>, <span class="pl-c1">0.0</span>, <span class="pl-c1">0.0</span>],
+  <span class="pl-ent">"size"</span> : [<span class="pl-c1">991</span>, <span class="pl-c1">992</span>, <span class="pl-c1">880</span>],
+  <span class="pl-ent">"pixelResolution"</span> : [<span class="pl-c1">0.097</span>,<span class="pl-c1">0.097</span>,<span class="pl-c1">0.18</span>],
+  <span class="pl-ent">"type"</span> : <span class="pl-s"><span class="pl-pds">"</span>GRAY16<span class="pl-pds">"</span></span>
+},
+{
+  <span class="pl-ent">"index"</span> : <span class="pl-c1">1</span>,
+  <span class="pl-ent">"file"</span> : <span class="pl-s"><span class="pl-pds">"</span>FCF_CSMH__54383_20121206_35_C3_zb15_zt01_63X_0-0-0_R1_L087_20130108192825183.lsm.tif<span class="pl-pds">"</span></span>,
+  <span class="pl-ent">"position"</span> : [<span class="pl-c1">700</span>, <span class="pl-c1">-694.0887500300357</span>, <span class="pl-c1">-77.41783189603937</span>],
+  <span class="pl-ent">"size"</span> : [<span class="pl-c1">991</span>, <span class="pl-c1">992</span>, <span class="pl-c1">880</span>],
+  <span class="pl-ent">"pixelResolution"</span> : [<span class="pl-c1">0.097</span>,<span class="pl-c1">0.097</span>,<span class="pl-c1">0.18</span>],
+  <span class="pl-ent">"type"</span> : <span class="pl-s"><span class="pl-pds">"</span>GRAY16<span class="pl-pds">"</span></span>
+}
+]</pre></div>
+<p dir="auto">The application provides automated converters for commonly used formats, but in general case an input metadata file needs to be converted or generated (depending on how you store metadata for your acquisitions).</p>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Zeiss Z1</h4><a id="user-content-zeiss-z1" class="anchor" aria-label="Permalink: Zeiss Z1" href="#zeiss-z1"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">The parser requires an .mvl metadata file. Image tiles can be stored in separate .czi files (one 4D image file per tile that includes all channels), or in a single .czi file.</p>
+<details>
+<summary><b>Run on Janelia cluster</b></summary>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="spark-janelia/parse-zeiss-z1-metadata.py \
+  -i &lt;path to metadata.mvl&gt; \
+  -b &lt;path to directory with image files&gt; \
+  -f &lt;images.czi for single file, or image%d.czi for multiple files that contain an index&gt; \
+  -r &lt;voxel size in microns, for example, 0.114,0.114,0.996&gt;"><pre class="notranslate"><code>spark-janelia/parse-zeiss-z1-metadata.py \
+  -i &lt;path to metadata.mvl&gt; \
+  -b &lt;path to directory with image files&gt; \
+  -f &lt;images.czi for single file, or image%d.czi for multiple files that contain an index&gt; \
+  -r &lt;voxel size in microns, for example, 0.114,0.114,0.996&gt;
+</code></pre></div>
+</details>
+<details>
+<summary><b>Run on local machine</b></summary>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="spark-local/parse-zeiss-z1-metadata.py \
+  -i &lt;path to metadata.mvl&gt; \
+  -b &lt;path to directory with image files&gt; \
+  -f &lt;images.czi for single file, or image%d.czi for multiple files that contain an index&gt; \
+  -r &lt;voxel size in microns, for example, 0.114,0.114,0.996&gt;"><pre class="notranslate"><code>spark-local/parse-zeiss-z1-metadata.py \
+  -i &lt;path to metadata.mvl&gt; \
+  -b &lt;path to directory with image files&gt; \
+  -f &lt;images.czi for single file, or image%d.czi for multiple files that contain an index&gt; \
+  -r &lt;voxel size in microns, for example, 0.114,0.114,0.996&gt;
+</code></pre></div>
+</details>
+<p dir="auto">This will create a single <code>tiles.json</code> file in the same directory as the existing .mvl file. Separate JSON tile configuration files for each channel will be created in the next step when the images are split into channel during conversion.</p>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">ImageList.csv objective-scan acquisitions</h4><a id="user-content-imagelistcsv-objective-scan-acquisitions" class="anchor" aria-label="Permalink: ImageList.csv objective-scan acquisitions" href="#imagelistcsv-objective-scan-acquisitions"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><em>ImageList.csv</em> metadata file lists image tile filenames in all channels and contains stage and objective coordinates of each tile. Image tiles are expected to be stored as .tif files (separate files for each channel).</p>
+<p dir="auto">Objective coordinates from the metadata file are converted into pixel coordinates based on the provided physical size of a voxel (in microns) and axis mapping which specifies flips and swaps between the two coordinate systems. For example, <code>-y,x,z</code> would mean that the objective X and Y should be swapped, and objective Y should be flipped.</p>
+<details>
+<summary><b>Run on Janelia cluster</b></summary>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="spark-janelia/parse-imagelist-metadata.py \
+  -i &lt;path to ImageList.csv&gt; \
+  -b &lt;path to directory with image files&gt; \
+  -r &lt;voxel size in microns, for example, 0.097,0.097,0.18&gt; \
+  -a &lt;axis mapping from objective coordinates to pixel coordinates, for example, -y,x,z&gt; \
+  [--skipMissingTiles to exclude non-existing tile images from configuration instead of raising an error]"><pre class="notranslate"><code>spark-janelia/parse-imagelist-metadata.py \
+  -i &lt;path to ImageList.csv&gt; \
+  -b &lt;path to directory with image files&gt; \
+  -r &lt;voxel size in microns, for example, 0.097,0.097,0.18&gt; \
+  -a &lt;axis mapping from objective coordinates to pixel coordinates, for example, -y,x,z&gt; \
+  [--skipMissingTiles to exclude non-existing tile images from configuration instead of raising an error]
+</code></pre></div>
+</details>
+<details>
+<summary><b>Run on local machine</b></summary>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="spark-local/parse-imagelist-metadata.py \
+  -i &lt;path to ImageList.csv&gt; \
+  -b &lt;path to directory with image files&gt; \
+  -r &lt;voxel size in microns, for example, 0.097,0.097,0.18&gt; \
+  -a &lt;axis mapping from objective coordinates to pixel coordinates, for example, -y,x,z&gt; \
+  [--skipMissingTiles to exclude non-existing tile images from configuration instead of raising an error]"><pre class="notranslate"><code>spark-local/parse-imagelist-metadata.py \
+  -i &lt;path to ImageList.csv&gt; \
+  -b &lt;path to directory with image files&gt; \
+  -r &lt;voxel size in microns, for example, 0.097,0.097,0.18&gt; \
+  -a &lt;axis mapping from objective coordinates to pixel coordinates, for example, -y,x,z&gt; \
+  [--skipMissingTiles to exclude non-existing tile images from configuration instead of raising an error]
+</code></pre></div>
+</details>
+<p dir="auto">This will create a number of JSON configuration files (one per channel), named as <code>488nm.json</code>, <code>560nm.json</code>, etc. if the corresponding laser frequency can be parsed from the image filenames, or simply <code>c0.json</code>, <code>c1.json</code>, etc. otherwise.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">3. Conversion of image tiles into N5</h3><a id="user-content-3-conversion-of-image-tiles-into-n5" class="anchor" aria-label="Permalink: 3. Conversion of image tiles into N5" href="#3-conversion-of-image-tiles-into-n5"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">The application requires to convert all tiles in the acquisition into <a href="https://github.com/saalfeldlab/n5">N5</a> in order to make the processing in the next steps faster. This also allows to work with different image file formats more easily.</p>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">.czi (Zeiss Z1) -&gt; N5:</h4><a id="user-content-czi-zeiss-z1---n5" class="anchor" aria-label="Permalink: .czi (Zeiss Z1) -&gt; N5:" href="#czi-zeiss-z1---n5"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<details>
+<summary><b>Run on Janelia cluster</b></summary>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="spark-janelia/convert-czi-tiles-n5.py \
+  &lt;number of cluster nodes&gt; \
+  -i &lt;path to tiles.json created in the previous step&gt; \
+  [--blockSize to override the default block size 128,128,64]"><pre class="notranslate"><code>spark-janelia/convert-czi-tiles-n5.py \
+  &lt;number of cluster nodes&gt; \
+  -i &lt;path to tiles.json created in the previous step&gt; \
+  [--blockSize to override the default block size 128,128,64]
+</code></pre></div>
+</details>
+<details>
+<summary><b>Run on local machine</b></summary>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="spark-local/convert-czi-tiles-n5.py \
+  -i &lt;path to tiles.json created in the previous step&gt; \
+  [--blockSize to override the default block size 128,128,64]"><pre class="notranslate"><code>spark-local/convert-czi-tiles-n5.py \
+  -i &lt;path to tiles.json created in the previous step&gt; \
+  [--blockSize to override the default block size 128,128,64]
+</code></pre></div>
+</details>
+<p dir="auto">This will convert the images into N5 and will create new tile configuration files that correspond to the converted tiles. The new configuration files will be named as <code>c0-n5.json</code>, <code>c1-n5.json</code>, etc. and should be used as inputs in the next steps.</p>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">.tif -&gt; N5:</h4><a id="user-content-tif---n5" class="anchor" aria-label="Permalink: .tif -&gt; N5:" href="#tif---n5"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<details>
+<summary><b>Run on Janelia cluster</b></summary>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="spark-janelia/convert-tiff-tiles-n5.py \
+  &lt;number of cluster nodes&gt; \
+  -i 488nm.json -i 560nm.json ... \
+  [--blockSize to override the default block size 128,128,64]"><pre class="notranslate"><code>spark-janelia/convert-tiff-tiles-n5.py \
+  &lt;number of cluster nodes&gt; \
+  -i 488nm.json -i 560nm.json ... \
+  [--blockSize to override the default block size 128,128,64]
+</code></pre></div>
+</details>
+<details>
+<summary><b>Run on local machine</b></summary>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="spark-local/convert-tiff-tiles-n5.py \
+  -i 488nm.json -i 560nm.json ... \
+  [--blockSize to override the default block size 128,128,64]"><pre class="notranslate"><code>spark-local/convert-tiff-tiles-n5.py \
+  -i 488nm.json -i 560nm.json ... \
+  [--blockSize to override the default block size 128,128,64]
+</code></pre></div>
+</details>
+<p dir="auto">This will convert the images into N5 and will create new tile configuration files that correspond to the converted tiles. The new configuration files will be named as <code>488nm-n5.json</code>, <code>488nm-n5.json</code>, etc. and should be used as inputs in the next steps.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">4. Flatfield estimation</h3><a id="user-content-4-flatfield-estimation" class="anchor" aria-label="Permalink: 4. Flatfield estimation" href="#4-flatfield-estimation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<details>
+<summary><b>Run on Janelia cluster</b></summary>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="spark-janelia/flatfield.py &lt;number of cluster nodes&gt; -i 488nm-n5.json -i 560nm-n5.json ..."><pre class="notranslate"><code>spark-janelia/flatfield.py &lt;number of cluster nodes&gt; -i 488nm-n5.json -i 560nm-n5.json ...
+</code></pre></div>
+</details>
+<details>
+<summary><b>Run on local machine</b></summary>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="spark-local/flatfield.py -i 488nm-n5.json -i 560nm-n5.json ..."><pre class="notranslate"><code>spark-local/flatfield.py -i 488nm-n5.json -i 560nm-n5.json ...
+</code></pre></div>
+</details>
+<p dir="auto">This will create a folder for each channel named such as <code>488nm-flatfield/</code> near the provided input files. After the application is finished, it will store two files <code>S.tif</code> and <code>T.tif</code> in each of the created folders (the brightfield and the offset respectively).
+The next steps will detect the flatfield folder and will automatically use the estimated flatfields to perform the flatfield correction on the fly.</p>
+<p dir="auto">The full list of available parameters for the flatfield script is available <a href="https://github.com/saalfeldlab/stitching-spark/wiki/Flatfield-parameters">here</a>.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">5. Stitching</h3><a id="user-content-5-stitching" class="anchor" aria-label="Permalink: 5. Stitching" href="#5-stitching"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<details>
+<summary><b>Run on Janelia cluster</b></summary>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="spark-janelia/stitch.py &lt;number of cluster nodes&gt; -i 488nm-n5.json -i 560nm-n5.json ..."><pre class="notranslate"><code>spark-janelia/stitch.py &lt;number of cluster nodes&gt; -i 488nm-n5.json -i 560nm-n5.json ...
+</code></pre></div>
+</details>
+<details>
+<summary><b>Run on local machine</b></summary>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="spark-local/stitch.py -i 488nm-n5.json -i 560nm-n5.json ..."><pre class="notranslate"><code>spark-local/stitch.py -i 488nm-n5.json -i 560nm-n5.json ...
+</code></pre></div>
+</details>
+<p dir="auto">This will run the stitching performing a number of iterations until it cannot improve the solution anymore. The images channels will be averaged on-the-fly before computing pairwise shifts in order to get higher correlations because of denser signal.</p>
+<p dir="auto">As a result, it will create files <code>488nm-n5-final.json</code>, <code>560nm-n5-final.json</code>, etc. near the input tile configuration files.
+It will also store a file named <code>optimizer.txt</code> that will contain the statistics on average and max errors, number of retained tiles and edges in the final graph, and cross correlation and variance threshold values that were used to obtain the final solution.</p>
+<p dir="auto">The current stitching method is iterative translation-based (improving the solution by building the prediction model).
+The pipeline incorporating a higher-order model is currently under development in the <code>split-tiles</code> branch.</p>
+<p dir="auto">The full list of available parameters for the stitch script is available <a href="https://github.com/saalfeldlab/stitching-spark/wiki/Stitching-parameters">here</a>.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">6. Exporting</h3><a id="user-content-6-exporting" class="anchor" aria-label="Permalink: 6. Exporting" href="#6-exporting"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<details>
+<summary><b>Run on Janelia cluster</b></summary>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="spark-janelia/export.py &lt;number of cluster nodes&gt; -i 488nm-n5-final.json -i 560nm-n5-final.json ..."><pre class="notranslate"><code>spark-janelia/export.py &lt;number of cluster nodes&gt; -i 488nm-n5-final.json -i 560nm-n5-final.json ...
+</code></pre></div>
+</details>
+<details>
+<summary><b>Run on local machine</b></summary>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="spark-local/export.py -i 488nm-n5-final.json -i 560nm-n5-final.json ..."><pre class="notranslate"><code>spark-local/export.py -i 488nm-n5-final.json -i 560nm-n5-final.json ...
+</code></pre></div>
+</details>
+<p dir="auto">This will generate an <a href="https://github.com/saalfeldlab/n5">N5</a> export under <code>export.n5/</code> folder. The export is fully compatible  with <a href="https://github.com/saalfeldlab/n5-viewer">N5 Viewer</a> and the <a href="https://github.com/saalfeldlab/n5-ij">N5 Fiji plugin</a> for browsing.</p>
+<p dir="auto">The most common optional parameters are:</p>
+<ul dir="auto">
+<li><code>--blending</code>: smoothes transitions between the tiles instead of making a hard cut between them</li>
+<li><code>--fill</code>: fills the extra space with the background intensity value instead of 0</li>
+</ul>
+<p dir="auto">The full list of available parameters for the export script is available <a href="https://github.com/saalfeldlab/stitching-spark/wiki/Export-parameters">here</a>.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">7. Converting N5 export to slice TIFF</h3><a id="user-content-7-converting-n5-export-to-slice-tiff" class="anchor" aria-label="Permalink: 7. Converting N5 export to slice TIFF" href="#7-converting-n5-export-to-slice-tiff"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<details>
+<summary><b>Run on Janelia cluster</b></summary>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="spark-janelia/n5-slice-tiff.py \
+  &lt;number of cluster nodes&gt; \
+  -i &lt;path to export.n5 directory&gt; \
+  [-s &lt;index of scale level, 0 means full resolution&gt;] \
+  [--compress to enable LZW compression. Can be much slower than uncompressed] \
+  [--sameDir to prepend all filenames with channel and store all slices in the same directory] \
+  [--leadingZeroes to pad slice indices in filenames with leading zeroes]"><pre class="notranslate"><code>spark-janelia/n5-slice-tiff.py \
+  &lt;number of cluster nodes&gt; \
+  -i &lt;path to export.n5 directory&gt; \
+  [-s &lt;index of scale level, 0 means full resolution&gt;] \
+  [--compress to enable LZW compression. Can be much slower than uncompressed] \
+  [--sameDir to prepend all filenames with channel and store all slices in the same directory] \
+  [--leadingZeroes to pad slice indices in filenames with leading zeroes]
+</code></pre></div>
+</details>
+<details>
+<summary><b>Run on local machine</b></summary>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="spark-local/n5-slice-tiff.py \
+  -i &lt;path to export.n5 directory&gt; \
+  [-s &lt;index of scale level, 0 means full resolution&gt;] \
+  [--compress to enable LZW compression. Can be much slower than uncompressed] \
+  [--sameDir to prepend all filenames with channel and store all slices in the same directory] \
+  [--leadingZeroes to pad slice indices in filenames with leading zeroes]"><pre class="notranslate"><code>spark-local/n5-slice-tiff.py \
+  -i &lt;path to export.n5 directory&gt; \
+  [-s &lt;index of scale level, 0 means full resolution&gt;] \
+  [--compress to enable LZW compression. Can be much slower than uncompressed] \
+  [--sameDir to prepend all filenames with channel and store all slices in the same directory] \
+  [--leadingZeroes to pad slice indices in filenames with leading zeroes]
+</code></pre></div>
+</details>
+<p dir="auto">This will create a directory named such as <code>slice-tiff-s0</code> based on the requested scale level index, where the generated stitched N5 export will be converted into a series of slice TIFF images. The resulting TIFF images will be XY slices.</p>
+</article></div></div> <!-- If no custom description in the Markdown file, the project's GitHub README file is used--> </section> </div> </div> </div>  <footer class="relative border-t border-gray-200 dark:border-slate-800 not-prose"> <div class="dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div> <div class="relative l mx-auto px-4 sm:px-6 dark:text-slate-300"> <div class="flex justify-between items-start my-6"> <div> <div class="mb-2"> <a class="inline-block font-bold text-xl" href="/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2">🔬 Janelia Software
+</a> </div> <div class="flex flex-col gap-2 text-sm text-muted"> <a class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out mr-2 rtl:mr-0 rtl:ml-2" href="https://www.hhmi.org/privacy-policy" target="_blank">Privacy Policy & Cookie Notice</a><a class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out mr-2 rtl:mr-0 rtl:ml-2" href="https://github.com/JaneliaSciComp/ossi-website" target="_blank">This site is open source! Contribute on GitHub.</a> </div> </div> <div class="w-24 min-[400px]:w-32 md:w-44"> <a href="https://www.janelia.org/" target="_blank"> <img src="/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/_astro/HHMI_Janelia_Logo-Black.YPERATnQ.png" alt="Logo for the Howard Hughes Medical Institute Janelia Research Campus" class="block dark:hidden"> <img src="/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/_astro/HHMI_Janelia_Logo-White.EXklwjQ9.png" alt="Logo for the Howard Hughes Medical Institute Janelia Research Campus" class="hidden dark:block"> </a> </div> </div> <div>  </div> <div class="md:flex md:items-center md:justify-between pb-6"> <ul class="flex mb-4 md:order-1 md:ml-4 md:mb-0"> <li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm pr-5 md:pr-0 md:pl-5 inline-flex items-center" aria-label="Email" href="#"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:mail">  <symbol id="ai:tabler:mail"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="m3 7l9 6l9-6"/></g></symbol><use xlink:href="#ai:tabler:mail"></use>  </svg>  </a> </li><li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm pr-5 md:pr-0 md:pl-5 inline-flex items-center" aria-label="X" href="#"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:brand-x">  <symbol id="ai:tabler:brand-x"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 4l11.733 16H20L8.267 4zm0 16l6.768-6.768m2.46-2.46L20 4"/></symbol><use xlink:href="#ai:tabler:brand-x"></use>  </svg>  </a> </li><li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm pr-5 md:pr-0 md:pl-5 inline-flex items-center" aria-label="Github" href="https://github.com/JaneliaSciComp"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:brand-github">  <symbol id="ai:tabler:brand-github"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.6-.6 1.2-.5 2V21"/></symbol><use xlink:href="#ai:tabler:brand-github"></use>  </svg>  </a> </li> </ul> <div class="text-sm mr-4 dark:text-slate-400"> © 2024 Howard Hughes Medical Institute </div> </div> </div> </footer>  </body> </html>

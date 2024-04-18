@@ -1,0 +1,1186 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/favicon.ico"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v4.6.2"><title>OSSI@Janelia</title><style is:global>
+  :root {
+    --font-sans: "Inter Variable";
+    --font-serif: var(--font-sans);
+    --font-heading: var(--font-sans);
+
+    /* --color-primary: rgb(30 64 175); */
+    --color-primary: rgb(5 141 150);
+    /* --color-secondary: rgb(30 58 138); */
+    --color-secondary: rgb(0 164 80);
+    /* --color-accent: rgb(109 40 217); */
+    --color-accent: rgb(63 194 205);
+
+    --color-text-heading: rgb(0 0 0);
+    --color-text-default: rgb(16 16 16);
+    --color-text-muted: rgb(16 16 16 / 66%);
+
+    --color-bg-page: rgb(255 255 255);
+    --color-bg-page-dark: rgb(3 6 32);
+
+    /* default color - this is dynamically updated by handleTagSelection */
+    --color-bg-selected-tag: var(--color-primary);
+  }
+
+  .dark {
+    --font-sans: "Inter Variable";
+    --font-serif: var(--font-sans);
+    --font-heading: var(--font-sans);
+
+    /* --color-primary: rgb(30 64 175); */
+    --color-primary: rgb(5 141 150);
+    /* --color-secondary: rgb(30 58 138); */
+    --color-secondary: rgb(0 164 80);
+    /* --color-accent: rgb(109 40 217); */
+    --color-accent: rgb(63 194 205);
+
+    --color-text-heading: rgb(0 0 0);
+    --color-text-default: rgb(229 236 246);
+    --color-text-muted: rgb(229 236 246 / 66%);
+
+    --color-bg-page: var(--color-bg-page-dark);
+
+    /* default color - this is dynamically updated by handleTagSelection */
+    --color-bg-selected-tag: var(--color-primary);
+  }
+</style><link rel="stylesheet" href="/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/_astro/_slug_.B7hbfkaU.css">
+<style>.twitter-tweet:not(.twitter-tweet-rendered){padding:var(--tc-padding, 1em);border:1px solid var(--tc-border-color, #cfd9de)}.twitter-tweet:not(.twitter-tweet-rendered)>:first-child{margin-top:0}.twitter-tweet:not(.twitter-tweet-rendered)>:last-child{margin-bottom:0}lite-youtube{background-color:#000;position:relative;display:block;contain:content;background-position:center center;background-size:cover;cursor:pointer;max-width:720px}lite-youtube:before{content:attr(data-title);display:block;position:absolute;top:0;background-image:linear-gradient(180deg,#000000ab,#0000008a 14%,#00000026 54%,#0000000d 72%,#0000 94%);height:99px;width:100%;font-family:YouTube Noto,Roboto,Arial,Helvetica,sans-serif;color:#eee;text-shadow:0 0 2px rgba(0,0,0,.5);font-size:18px;padding:25px 20px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;box-sizing:border-box}lite-youtube:hover:before{color:#fff}lite-youtube:after{content:"";display:block;padding-bottom:56.25%}lite-youtube>iframe{width:100%;height:100%;position:absolute;top:0;left:0;border:0}lite-youtube>.lty-playbtn{display:block;width:100%;height:100%;background:no-repeat center/68px 48px;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg>');position:absolute;cursor:pointer;z-index:1;filter:grayscale(100%);transition:filter .1s cubic-bezier(0,0,.2,1);border:0}lite-youtube:hover>.lty-playbtn,lite-youtube .lty-playbtn:focus{filter:none}lite-youtube.lyt-activated{cursor:unset}lite-youtube.lyt-activated:before,lite-youtube.lyt-activated>.lty-playbtn{opacity:0;pointer-events:none}.lyt-visually-hidden{clip:rect(0 0 0 0);-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;overflow:hidden;position:absolute;white-space:nowrap;width:1px}lite-youtube>iframe{all:unset!important;width:100%!important;height:100%!important;position:absolute!important;inset:0!important;border:0!important}lite-vimeo{font-size:10px;background-color:#000;position:relative;display:block;contain:content;background-position:center center;background-size:cover}lite-vimeo:after{content:"";display:block;padding-bottom:56.25%}lite-vimeo>iframe{all:unset!important;width:100%!important;height:100%!important;position:absolute!important;inset:0!important;border:0!important}lite-vimeo>.ltv-playbtn{content:"";position:absolute;inset:0;width:100%;background:transparent;outline:0;border:0;cursor:pointer}lite-vimeo>.ltv-playbtn:before{width:6.5em;height:4em;background:#172322bf;opacity:.8;border-radius:.25rem;transition:all .2s cubic-bezier(0,0,.2,1)}lite-vimeo>.ltv-playbtn:focus:before{outline:auto}lite-vimeo:hover>.ltv-playbtn:before{background-color:#00adef;background-color:var(--ltv-color, #00adef);opacity:1}lite-vimeo>.ltv-playbtn:after{border-style:solid;border-width:1em 0 1em 1.7em;border-color:transparent transparent transparent #fff}lite-vimeo>.ltv-playbtn:before,lite-vimeo>.ltv-playbtn:after{content:"";position:absolute;top:50%;left:50%;transform:translate3d(-50%,-50%,0)}lite-vimeo.ltv-activated:before,lite-vimeo.ltv-activated>.ltv-playbtn{cursor:unset;opacity:0;pointer-events:none}
+</style><script type="module" src="/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/_astro/hoisted.XVAdaamv.js"></script></head> <body class="text-default bg-page"> <header class="scroll fixed top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out" data-sticky-header="true" id="header"> <div class="absolute inset-0 bg-white dark:bg-dark"></div> <div class="relative text-default p-3 md:px-6 w-full flex justify-between"> <a class="flex items-center" href="/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2"> <span class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl font-bold text-gray-900 whitespace-nowrap dark:text-white"></span> <span class="min-[600px]:hidden self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl lg:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"> 🔬   Janelia OSSI </span> <span class="hidden min-[600px]:block self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl lg:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"> 🔬   Janelia Open Source Science Initiative </span> </a> <div class="flex"> <div class="flex items-center lg:hidden order-2"> <button class="flex flex-col h-12 w-12 rounded justify-center items-center cursor-pointer group" aria-label="Toggle Menu" data-aw-toggle-menu> <span class="sr-only">Toggle Menu</span>  <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:rotate-45 group-[.expanded]:translate-y-2.5"></span> <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:opacity-0"></span> <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:-rotate-45 group-[.expanded]:-translate-y-2.5"></span>  </button> </div> <nav class="items-center w-full lg:w-auto hidden lg:flex text-default overflow-y-auto overflow-x-hidden lg:overflow-y-visible lg:overflow-x-auto lg:mx-5" aria-label="Main navigation"> <ul class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium"> <li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2"> Home </a> </li><li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/projects"> Projects </a> </li><li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/ecosystems"> Ecosystems </a> </li><li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/ossi"> OSSI </a> </li><li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/blog"> Blog </a> </li> </ul> </nav> <div id="toggle-theme" class="self-center flex items-center w-auto static justify-end"> <button type="button" class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="Toggle between Dark and Light mode" data-toggle-color-scheme> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6" data-icon="tabler:sun">  <symbol id="ai:tabler:sun"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0-8 0m-5 0h1m8-9v1m8 8h1m-9 8v1M5.6 5.6l.7.7m12.1-.7l-.7.7m0 11.4l.7.7m-12.1-.7l-.7.7"/></symbol><use xlink:href="#ai:tabler:sun"></use>  </svg> </button> </div> </div> </div> </header>  <div class="pt-24 pb-8 max-w-7xl mx-auto"> <a class="self-start mx-6 border-b-2 text-sm transition ease-in duration-200 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer" href="/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/projects">
+Projects
+</a> <div class="flex flex-col lg:grid grid-cols-6"> <section class="row-start-1 row-span-1 col-span-4 pt-6 pb-8"> <h1 class="mx-6 text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading"> Paintera </h1> <p class="mx-6 mt-6 md:mt-10 text-xl md:text-2xl text-muted dark:text-slate-400"> Maintain and extend Paintera (3D annotation software for very large volumes). </p> </section> <div class="px-6 py-12 lg:p-0 lg:pl-12 row-start-1 row-span-2 col-start-5 col-span-2 bg-primary lg:bg-page dark:bg-slate-900"> <div class="p-6 rounded-md shadow-sm lg:shadow-none bg-page"> <h2 class="text-xl font-bold mb-6">Quick links</h2> <div class="flex flex-row flex-wrap gap-6 mx-auto"> <div class="flex flex-col gap-1 mr-8"> <h3 class="font-bold mb-1">Get started</h3> <a class="self-start flex items-center gap-1 transition ease-in duration-200 hover:bg-gray-100 dark:text-slate-300 dark:hover:bg-slate-800 cursor-pointer" href="https://github.com/saalfeldlab/paintera"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5  inline-block" data-icon="tabler:square-chevron-right">  <symbol id="ai:tabler:square-chevron-right"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m11 9l3 3l-3 3"/><path d="M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></g></symbol><use xlink:href="#ai:tabler:square-chevron-right"></use>  </svg>
+Source code
+</a> <a class="self-start flex items-center gap-1 transition ease-in duration-200 hover:bg-gray-100 dark:text-slate-300 dark:hover:bg-slate-800 cursor-pointer" href="https://github.com/saalfeldlab/paintera"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5  inline-block" data-icon="tabler:square-chevron-right">  <use xlink:href="#ai:tabler:square-chevron-right"></use>  </svg>
+Documentation
+</a> <a class="self-start flex items-center gap-1 transition ease-in duration-200 hover:bg-gray-100 dark:text-slate-300 dark:hover:bg-slate-800 cursor-pointer" href="https://github.com/saalfeldlab/paintera?tab=readme-ov-file#installation-and-usage"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5  inline-block" data-icon="tabler:square-chevron-right">  <use xlink:href="#ai:tabler:square-chevron-right"></use>  </svg>
+How to install
+</a> </div> <div class="flex flex-col gap-1 mr-8 md:mr-12"> <h3 class="font-bold mb-1">Get help</h3> <a class="self-start btn rounded-md p-2 font-normal" href="https://github.com/saalfeldlab/paintera">
+Open an issue on GitHub
+</a> <a class="self-start btn rounded-md p-2 font-normal" href="placeholder@gmail.com">
+Reach out with a question
+</a> </div> <div class="flex flex-col gap-1"> <h3 class="font-bold mb-1">Cite this software</h3> <a class=" self-start border-b-2 transition ease-in duration-200 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer" href="https://github.com/saalfeldlab/paintera">Cite the software on GitHub</a> </div> </div> </div> </div> <div class="col-start-1 col-span-4"> <div class="flex flex-col pb-12 lg:pb-0 lg:ml-6 bg-primary lg:bg-page items-center">   </div> <div class="mx-6 my-6 flex flex-col gap-1"> <div class="flex flex-wrap mb-2 gap-3"> <p class="font-semibold">Development Team:</p> <a class="self-start border-b-2 transition ease-in duration-200 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer" href="https://www.janelia.org/lab/saalfeld-lab"> Saalfeld Lab </a> </div> <div class="flex flex-wrap mb-2 gap-3"> <p class="font-semibold">License:</p> GPL-2.0 </div> <div class="flex flex-wrap mb-2 gap-3"> <p class="font-semibold">Related blog posts:</p> <a class="self-start border-b-2 transition ease-in duration-200 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer" href="/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/blog/working-with-ossi-supported-projects"> Working with OSSI-supported projects </a> </div> <div class="flex flex-wrap mb-2 gap-3"><h3 class="font-bold mb-1">External links:</h3><div class="mb-1"><a class="self-start border-b-2 transition ease-in duration-200 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer" href="https://drive.google.com/file/d/1pcrKTbzkNczkoDETg8og-y5XzCdauVJ3/view"> OSSI funding proposal </a></div></div> <div class="pt-6 flex flex-wrap gap-2"> <span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:var(--color-primary)"> Saalfeld Lab </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#ab3f32"> Java </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#ab3f32"> Kotlin </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#8b8883"> GPL-2.0 </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#ba5915"> Electron microscopy (EM) </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#ba5915"> Annotation </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#7b0249"> Local installation </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:var(--color-accent)"> ImgLib2 </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:var(--color-accent)"> BigDataViewer </span><span class="bg-primary text-white px-2 py-1 rounded-md text-sm" style="background-color:#24a3cc"> N5 </span> </div> </div> <section class="col-span-4 row-start-3 ml-6 prose prose-lg lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg"> <div class="my-6 md:mt-10"> <div class="border-t dark:border-slate-700"></div> </div> <!-- This is where any custom description of the project gets rendered --> <div><div id="readme" class="md" data-path="README.md"><article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 class="heading-element" dir="auto">Paintera  <a href="https://github.com/saalfeldlab/paintera/actions/workflows/build-main.yml"><img src="https://github.com/saalfeldlab/paintera/actions/workflows/build-main.yml/badge.svg" alt="Build Status" style="max-width: 100%;"></a> <a href="https://doi.org/10.5281/zenodo.6581156" rel="nofollow"><img src="https://camo.githubusercontent.com/4962b50c8a10c0006ea52a76c22ff997e9069f058be05d30e2eae78feb8e5673/68747470733a2f2f7a656e6f646f2e6f72672f62616467652f444f492f31302e353238312f7a656e6f646f2e363538313135362e737667" alt="DOI" data-canonical-src="https://zenodo.org/badge/DOI/10.5281/zenodo.6581156.svg" style="max-width: 100%;"></a></h1><a id="user-content-paintera---" class="anchor" aria-label="Permalink: Paintera  " href="#paintera---"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="img/social-preview-1280.png"><img src="img/social-preview-1280.png" alt="Paintera example with meshes for multiple neurons and synapses" title="Paintera" style="max-width: 100%;"></a></p>
+<p dir="auto">Paintera is a general visualization tool for 3D volumetric data and proof-reading in segmentation/reconstruction with a primary focus on neuron reconstruction from <a href="http://www.rsc.org/publishing/journals/prospect/ontology.asp?id=CMO:0001800&amp;MSID=B310802C" rel="nofollow">electron micrographs</a> in <a href="https://en.wikipedia.org/wiki/Connectomics" rel="nofollow">connectomics</a>. It features/supports:</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> Views of orthogonal 2D cross-sections of the data at arbitrary angles and zoom levels</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> <a href="https://en.wikipedia.org/wiki/Mipmap" rel="nofollow">Mipmaps</a> for efficient display of arbitrarily large data at arbitrary scale levels</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> Label data
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> Painting in arbitrary 3D orientation (not just ortho-slices)
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> Paint Brush</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> 2D and 3D flood fill</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> <a href="https://segment-anything.com/" rel="nofollow">Segment Anything</a> aided semi-automatic annotation ❗</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> Rapid 3D sculpting with interactive shape interpolation combining all of the above</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> Manual agglomeration</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> 3D visualization as polygon meshes
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> Meshes for each mipmap level</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> Mesh generation on-the-fly via marching cubes to incorporate painted labels and agglomerations in 3D visualization. Marching Cubes is parallelized over small blocks. Only relevant blocks are considered (huge speed-up for sparse label data).</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> Adaptive mesh details, i.e. only show high-resolution meshes for blocks that are closer to camera.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Installation and Usage</h2><a id="user-content-installation-and-usage" class="anchor" aria-label="Permalink: Installation and Usage" href="#installation-and-usage"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Paintera is available for installation through <a href="#conda">conda</a> and the <a href="#pip">Python Package Index</a>. If installing via <a href="#conda">conda</a>, dependencies are handled for you. When installing from <a href="#pip">pip</a> it is necessary to install, Java 11 and Apache Maven.</p>
+<p dir="auto">Development version of Paintera are released as standalone platform specific installers, see <a href="#development-releases">development releases</a> for installation instructions.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Conda</h3><a id="user-content-conda" class="anchor" aria-label="Permalink: Conda" href="#conda"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Installation through conda requires an <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/" rel="nofollow">installation of the conda package manager</a>.</p>
+<p dir="auto">Paintera installation requires an isolated conda environmet:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="conda create --name paintera
+conda activate paintera"><pre>conda create --name paintera
+conda activate paintera</pre></div>
+<p dir="auto">Paintera is available for installation from the <code>conda-forge</code> channel:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="conda install -c conda-forge paintera"><pre>conda install -c conda-forge paintera</pre></div>
+<p dir="auto">For reasons that are not fully transparent to us at this time, conda may decide to install an outdated version of Paintera instead of the most recent one, you can fix this by updating Paintera:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="conda update -c conda-forge paintera"><pre>conda update -c conda-forge paintera</pre></div>
+<p dir="auto">Paintera can then be executed with the <code>paintera</code> command:</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="paintera [[JGO ARG... ][JVM ARG...] -- ][ARG...]"><pre class="notranslate"><code>paintera [[JGO ARG... ][JVM ARG...] -- ][ARG...]
+</code></pre></div>
+<p dir="auto">If you cannot see 3D rendering of objects or orthoslices, and Paintera floods the terminal with error messages like:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="...
+Feb 05, 2021 1:21:53 PM javafx.scene.shape.Mesh &lt;init&gt;
+WARNING: System can't support ConditionalFeature.SCENE3D
+..."><pre>...
+Feb 05, 2021 1:21:53 PM javafx.scene.shape.Mesh <span class="pl-k">&lt;</span>init<span class="pl-k">&gt;</span>
+WARNING: System can<span class="pl-s"><span class="pl-pds">'</span>t support ConditionalFeature.SCENE3D</span>
+<span class="pl-s">...</span></pre></div>
+<p dir="auto">please try to start it with forced GPU rendering:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="paintera [JGO ARG... ][JVM ARG... ]-Dprism.forceGPU=true -- [ARG...]"><pre>paintera [JGO ARG... ][JVM ARG... ]-Dprism.forceGPU=true -- [ARG...]</pre></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Dependencies</h3><a id="user-content-dependencies" class="anchor" aria-label="Permalink: Dependencies" href="#dependencies"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h5 class="heading-element" dir="auto"><em>Note</em> This section is not required if installing via the <a href="#conda">conda</a> <code>paintera</code> package.</h5><a id="user-content-note-this-section-is-not-required-if-installing-via-the-conda-paintera-package" class="anchor" aria-label="Permalink: Note This section is not required if installing via the condapaintera package." href="#note-this-section-is-not-required-if-installing-via-the-conda-paintera-package"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">OpenJDK 11 and Maven are available through <code>conda-forge</code> channel on <a href="https://conda.io" rel="nofollow">conda</a>, respectively.</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="conda install -c conda-forge openjdk maven"><pre>conda install -c conda-forge openjdk maven</pre></div>
+<p dir="auto">Alternatively, you can install Java 11 and Maven manually. Java 11 (through <a href="https://openjdk.java.net/" rel="nofollow">OpenJDK</a>) and Apache Maven are available for installation on many Linux distributions.</p>
+<p dir="auto">On Windows and macOS the use of <a href="https://www.oracle.com/java/technologies/javase-jdk11-downloads.html" rel="nofollow">Oracle Java 11</a> is recommended and <a href="https://maven.apache.org" rel="nofollow">Apache Maven needs to be downloaded and installed</a> manually. Make sure that both Java and Maven are available on the <code>PATH</code> after installation. Note that our experience with Windows and macOS installations is very limited and there may be better ways to install Java 11 and Maven on these operating systems. If you are aware of any, please create a pull request to add these to this README.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Pip</h3><a id="user-content-pip" class="anchor" aria-label="Permalink: Pip" href="#pip"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Note: If installing via pip, it will be necessary to have Java 11 and Maven installed manually.</h4><a id="user-content-note-if-installing-via-pip-it-will-be-necessary-to-have-java-11-and-maven-installed-manually" class="anchor" aria-label="Permalink: Note: If installing via pip, it will be necessary to have Java 11 and Maven installed manually." href="#note-if-installing-via-pip-it-will-be-necessary-to-have-java-11-and-maven-installed-manually"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Paintera is <a href="https://pypi.org/project/paintera" rel="nofollow">available on the Python Package Index</a> and can be installed through pip (<a href="https://www.python.org" rel="nofollow"><code>Python &gt;= 3.6</code></a> required):</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="pip install paintera"><pre>pip install paintera</pre></div>
+<p dir="auto">Generally, it is advisable to install packages into user space with pip, i.e.</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="pip install --user paintera"><pre>pip install --user paintera</pre></div>
+<p dir="auto">On Linux, the packages will be installed into <code>$HOME/.local</code> and Paintera will be located at</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="$HOME/.local/bin/paintera"><pre><span class="pl-smi">$HOME</span>/.local/bin/paintera</pre></div>
+<p dir="auto">You can add <code>$HOME/.local/bin</code> to the <code>PATH</code> to make the <code>paintera</code> accessible from different locations.
+Paintera can then be executed with the <code>paintera</code> command:</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="paintera [[JGO ARG...] [JVM ARG...] --] [ARG...]"><pre class="notranslate"><code>paintera [[JGO ARG...] [JVM ARG...] --] [ARG...]
+</code></pre></div>
+<p dir="auto">We recommend setting these JVM options:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-Xmx16G</td>
+<td>Maximum Java heap space (replace 16G with desired amount)</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Running from source</h2><a id="user-content-running-from-source" class="anchor" aria-label="Permalink: Running from source" href="#running-from-source"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Clone the paintera git repository:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="git clone https://github.com/saalfeldlab/paintera.git
+cd paintera"><pre>git clone https://github.com/saalfeldlab/paintera.git
+<span class="pl-c1">cd</span> paintera</pre></div>
+<p dir="auto">To run Paintera from source requires the dependencies listed in the above <a href="#Dependencies">dependencies</a> section.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Source Dependencies via sdkman</h3><a id="user-content-source-dependencies-via-sdkman" class="anchor" aria-label="Permalink: Source Dependencies via sdkman" href="#source-dependencies-via-sdkman"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Alternatively, you can utilize <a href="https://sdkman.io/install" rel="nofollow">sdkman</a> to manage the appropriate java version. Install sdkman as follows:</p>
+<p dir="auto"><em>Note</em>: If using windows, the following sdk commands must be run via either <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10" rel="nofollow">WSL</a>, <a href="https://www.cygwin.com/install.html" rel="nofollow">Cygwin</a> or <a href="https://git-scm.com/download/win" rel="nofollow">Git Bash For Windows</a>. For Windows installation instructions, please follow the <a href="https://sdkman.io/install" rel="nofollow">Windows Installtion</a> instructions.</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="curl -s &quot;https://get.sdkman.io&quot; | bash
+source &quot;$HOME/.sdkman/bin/sdkman-init.sh&quot;"><pre>curl -s <span class="pl-s"><span class="pl-pds">"</span>https://get.sdkman.io<span class="pl-pds">"</span></span> <span class="pl-k">|</span> bash
+<span class="pl-c1">source</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$HOME</span>/.sdkman/bin/sdkman-init.sh<span class="pl-pds">"</span></span></pre></div>
+<p dir="auto">Once sdkman is installed, you can install the appropriate java version with:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="sdk install java 11.0.10-open"><pre>sdk install java 11.0.10-open</pre></div>
+<p dir="auto"><code>sdk</code> will then prompt whether to change to that version of java for your system default. If you say "No", then you will want to specify that you'd like to use Java 11 locally in your paintera directory. To do this, navigate to the <code>paintera</code> directory cloned in the above step, and execute:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="sdk use java 11.0.10-open
+# verify active version
+sdk current java"><pre>sdk use java 11.0.10-open
+<span class="pl-c"><span class="pl-c">#</span> verify active version</span>
+sdk current java</pre></div>
+<p dir="auto">Similarly, you can install maven via <code>sdkman</code> if you desire:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="sdk install maven"><pre>sdk install maven</pre></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Running Paintera</h3><a id="user-content-running-paintera" class="anchor" aria-label="Permalink: Running Paintera" href="#running-paintera"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">To run paintera, execute the follow maven goal:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="mvn javafx:run"><pre>mvn javafx:run</pre></div>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Development Releases</h2><a id="user-content-development-releases" class="anchor" aria-label="Permalink: Development Releases" href="#development-releases"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><strong>NOTE</strong> This is still an experimentally supported installation method, and should only be used to test Paintera features still in development.
+For supported releases, please install via <a href="#conda">conda</a>.</p>
+<p dir="auto">Latest development releases that track against the current <code>master</code> branch are available as standalone installers for Windows, Ubuntu, and MacOS.</p>
+<p dir="auto">Download the latest build from the <a href="https://github.com/saalfeldlab/paintera/releases">Paintera Releases</a> page under the <code>Assets</code> section for the deired platform.</p>
+<p dir="auto">Some known issues with these installers:</p>
+<ul dir="auto">
+<li>No icon on some platforms (at least Ubuntu)</li>
+<li>Doesn't install as command line tool</li>
+<li>Must be installed manually to update versions</li>
+</ul>
+<p dir="auto">It's possible that this will replace the current release process, but for now, we have not committed to this.</p>
+<p dir="auto">Some discussion around this can be found <a href="https://github.com/saalfeldlab/paintera/issues/253" data-hovercard-type="issue" data-hovercard-url="/saalfeldlab/paintera/issues/253/hovercard">in github issue #253</a></p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Display help message and command line parameters</h2><a id="user-content-display-help-message-and-command-line-parameters" class="anchor" aria-label="Permalink: Display help message and command line parameters" href="#display-help-message-and-command-line-parameters"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">The following assumes that Paintera was installed through <a href="#conda">conda</a> or <a href="#pip">pip</a> and the <code>paintera</code> command is available on the command line.</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="$ paintera --help
+Usage: Paintera [--add-n5-container=&lt;container&gt;...
+                [--add-n5-container=&lt;container&gt;...]... (-d=DATASET...
+                [-d=DATASET...]... [-r=RESOLUTION] [-r=RESOLUTION]...
+                [-o=OFFSET] [-o=OFFSET]... [-R] [--min=MIN] [--max=MAX]
+                [--channel-dimension=CHANNEL_DIMENSION]
+                [--channels=CHANNELS...] [--channels=CHANNELS...]...
+                [--name=NAME] [--name=NAME]...
+                [--id-service-fallback=ID_SERVICE_FALLBACK]
+                [--label-block-lookup-fallback=LABEL_BLOCK_LOOKUP_FALLBACK]
+                [--entire-container] [--exclude=EXCLUDE...]
+                [--exclude=EXCLUDE...]... [--include=INCLUDE...]
+                [--include=INCLUDE...]... [--only-explicitly-included])]...
+                [-h] [--default-to-temp-directory] [--print-error-codes]
+                [--version] [--height=HEIGHT]
+                [--highest-screen-scale=HIGHEST_SCREEN_SCALE]
+                [--num-screen-scales=NUM_SCREEN_SCALES]
+                [--screen-scale-factor=SCREEN_SCALE_FACTOR] [--width=WIDTH]
+                [--screen-scales=SCREEN_SCALES[,SCREEN_SCALES...]...]...
+                [PROJECT]
+      [PROJECT]              Optional project N5 root (N5 or FileSystem).
+      --add-n5-container=&lt;container&gt;...
+                             Container of dataset(s) to be added. If none is
+                               provided, default to Paintera project (if any).
+                               Currently N5 file system and HDF5 containers are
+                               supported.
+      --channel-dimension=CHANNEL_DIMENSION
+                             Defines the dimension of a 4D dataset to be
+                               interpreted as channel axis. 0 &lt;=
+                               CHANNEL_DIMENSION &lt;= 3
+                               Default: 3
+      --channels=CHANNELS... Use only this subset of channels for channel (4D)
+                               data. Multiple subsets can be specified. If no
+                               channels are specified, use all channels.
+  -d, --dataset=DATASET...   Dataset(s) within CONTAINER to be added. TODO: If
+                               no datasets are specified, all datasets will be
+                               added (or use a separate option for this).
+      --default-to-temp-directory
+                             Default to temporary directory instead of showing
+                               dialog when PROJECT is not specified.
+      --entire-container     If set to true, discover all datasets (Paintera
+                               format, multi-scale group, and N5 dataset)
+                               inside CONTAINER and add to Paintera. The -d,
+                               --dataset and --name options will be ignored if
+                               ENTIRE_CONTAINER is set. Datasets can be
+                               excluded through the --exclude option. The
+                               --include option overrides any exclusions.
+      --exclude=EXCLUDE...   Exclude any data set that matches any of EXCLUDE
+                               regex patterns.
+  -h, --help                 Display this help message.
+      --height=HEIGHT        Initial height of viewer. Defaults to 600.
+                               Overrides height stored in project.
+                               Default: -1
+      --highest-screen-scale=HIGHEST_SCREEN_SCALE
+                             Highest screen scale, restricted to the interval
+                               (0,1], defaults to 1. If no scale option is
+                               specified, scales default to [1.0, 0.5, 0.25,
+                               0.125, 0.0625].
+      --id-service-fallback=ID_SERVICE_FALLBACK
+                             Set a fallback id service for scenarios in which
+                               an id service is not provided by the data
+                               backend, e.g. when no `maxId' attribute is
+                               specified in an N5 dataset. Valid options are
+                               (case insensitive): from-data — infer the max id
+                               and id service from the dataset (may take a long
+                               time for large datasets), none — do not use an
+                               id service (requesting new ids will not be
+                               possible), and ask — show a dialog to choose
+                               between those two options
+                               Default: ask
+      --include=INCLUDE...   Include any data set that matches any of INCLUDE
+                               regex patterns. Takes precedence over EXCLUDE.
+      --label-block-lookup-fallback=LABEL_BLOCK_LOOKUP_FALLBACK
+                             Set a fallback label block lookup for scenarios in
+                               which a label block lookup is not provided by
+                               the data backend. The label block lookup is used
+                               to process only relevant data during on-the-fly
+                               mesh generation. Valid options are: `complete' —
+                               always process the entire dataset (slow for
+                               large data), `none' — do not process at all (no
+                               3D representations/meshes available), and `ask'
+                               — show a dialog to choose between those two
+                               options
+                               Default: ask
+      --max=MAX              Maximum value of contrast range for raw and
+                               channel data.
+      --min=MIN              Minimum value of contrast range for raw and
+                               channel data.
+      --name=NAME            Specify name for dataset(s). The names are
+                               assigned to datasets in the same order as
+                               specified. If more datasets than names are
+                               specified, the remaining dataset names will
+                               default to the last segment of the dataset path.
+      --num-screen-scales=NUM_SCREEN_SCALES
+                             Number of screen scales, defaults to 3. If no
+                               scale option is specified, scales default to
+                               [1.0, 0.5, 0.25, 0.125, 0.0625].
+  -o, --offset=OFFSET        Spatial offset for all dataset(s) specified by
+                               DATASET. Takes meta-data over resolution
+                               specified in meta data of DATASET
+      --only-explicitly-included
+                             When this option is set, use only data sets that
+                               were explicitly included via INCLUDE. Equivalent
+                               to --exclude '.*'
+      --print-error-codes    List all error codes and exit.
+  -r, --resolution=RESOLUTION
+                             Spatial resolution for all dataset(s) specified by
+                               DATASET. Takes meta-data over resolution
+                               specified in meta data of DATASET
+  -R, --revert-array-attributes
+                             Revert array attributes found in meta data of
+                               attributes of DATASET. Does not affect any array
+                               attributes set explicitly through the RESOLUTION
+                               or OFFSET options.
+      --screen-scale-factor=SCREEN_SCALE_FACTOR
+                             Scalar value from the open interval (0,1) that
+                               defines how screen scales diminish in each
+                               dimension. Defaults to 0.5. If no scale option
+                               is specified, scales default to [1.0, 0.5, 0.25,
+                               0.125, 0.0625].
+      --screen-scales=SCREEN_SCALES[,SCREEN_SCALES...]...
+                             Explicitly set screen scales. Must be strictly
+                               monotonically decreasing values in from the
+                               interval (0,1]. Overrides all other screen scale
+                               options. If no scale option is specified, scales
+                               default to [1.0, 0.5, 0.25, 0.125, 0.0625].
+      --version              Print version string and exit
+      --width=WIDTH          Initial width of viewer. Defaults to 800.
+                               Overrides width stored in project.
+                               Default: -1"><pre>$ paintera --help
+Usage: Paintera [--add-n5-container<span class="pl-k">=&lt;</span>container<span class="pl-k">&gt;</span>...
+                [--add-n5-container<span class="pl-k">=&lt;</span>container<span class="pl-k">&gt;</span>...]... (-d=DATASET...
+                [-d<span class="pl-k">=</span>DATASET...]... [-r<span class="pl-k">=</span>RESOLUTION] [-r<span class="pl-k">=</span>RESOLUTION]...
+                [-o<span class="pl-k">=</span>OFFSET] [-o<span class="pl-k">=</span>OFFSET]... [-R] [--min<span class="pl-k">=</span>MIN] [--max<span class="pl-k">=</span>MAX]
+                [--channel-dimension<span class="pl-k">=</span>CHANNEL_DIMENSION]
+                [--channels<span class="pl-k">=</span>CHANNELS...] [--channels<span class="pl-k">=</span>CHANNELS...]...
+                [--name<span class="pl-k">=</span>NAME] [--name<span class="pl-k">=</span>NAME]...
+                [--id-service-fallback<span class="pl-k">=</span>ID_SERVICE_FALLBACK]
+                [--label-block-lookup-fallback<span class="pl-k">=</span>LABEL_BLOCK_LOOKUP_FALLBACK]
+                [--entire-container] [--exclude<span class="pl-k">=</span>EXCLUDE...]
+                [--exclude<span class="pl-k">=</span>EXCLUDE...]... [--include<span class="pl-k">=</span>INCLUDE...]
+                [--include<span class="pl-k">=</span>INCLUDE...]... [--only-explicitly-included])]...
+                [-h] [--default-to-temp-directory] [--print-error-codes]
+                [--version] [--height<span class="pl-k">=</span>HEIGHT]
+                [--highest-screen-scale<span class="pl-k">=</span>HIGHEST_SCREEN_SCALE]
+                [--num-screen-scales<span class="pl-k">=</span>NUM_SCREEN_SCALES]
+                [--screen-scale-factor<span class="pl-k">=</span>SCREEN_SCALE_FACTOR] [--width<span class="pl-k">=</span>WIDTH]
+                [--screen-scales<span class="pl-k">=</span>SCREEN_SCALES[,SCREEN_SCALES...]...]...
+                [PROJECT]
+      [PROJECT]              Optional project N5 root (N5 or FileSystem).
+      --add-n5-container=<span class="pl-k">&lt;</span>container<span class="pl-k">&gt;</span>...
+                             Container of dataset(s) to be added. If none is
+                               provided, default to Paintera project (if any).
+                               Currently N5 file system and HDF5 containers are
+                               supported.
+      --channel-dimension=CHANNEL_DIMENSION
+                             Defines the dimension of a 4D dataset to be
+                               interpreted as channel axis. 0 <span class="pl-k">&lt;</span>=
+                               CHANNEL_DIMENSION <span class="pl-k">&lt;</span>= 3
+                               Default: 3
+      --channels=CHANNELS... Use only this subset of channels <span class="pl-k">for</span> channel (4D)
+                               data. Multiple subsets can be specified. If no
+                               channels are specified, use all channels.
+  -d, --dataset=DATASET...   Dataset(s) within CONTAINER to be added. TODO: If
+                               no datasets are specified, all datasets will be
+                               added (or use a separate option <span class="pl-k">for</span> this).
+      --default-to-temp-directory
+                             Default to temporary directory instead of showing
+                               dialog when PROJECT is not specified.
+      --entire-container     If <span class="pl-c1">set</span> to true, discover all datasets (Paintera
+                               format, multi-scale group, and N5 dataset)
+                               inside CONTAINER and add to Paintera. The -d,
+                               --dataset and --name options will be ignored <span class="pl-k">if</span>
+                               ENTIRE_CONTAINER is set. Datasets can be
+                               excluded through the --exclude option. The
+                               --include option overrides any exclusions.
+      --exclude=EXCLUDE...   Exclude any data <span class="pl-c1">set</span> that matches any of EXCLUDE
+                               regex patterns.
+  -h, --help                 Display this <span class="pl-c1">help</span> message.
+      --height=HEIGHT        Initial height of viewer. Defaults to 600.
+                               Overrides height stored <span class="pl-k">in</span> project.
+                               Default: -1
+      --highest-screen-scale=HIGHEST_SCREEN_SCALE
+                             Highest screen scale, restricted to the interval
+                               (0,1], defaults to 1. If no scale option is
+                               specified, scales default to [1.0, 0.5, 0.25,
+                               0.125, 0.0625].
+      --id-service-fallback=ID_SERVICE_FALLBACK
+                             Set a fallback id service <span class="pl-k">for</span> <span class="pl-smi">scenarios</span> <span class="pl-k">in</span> which
+                               an id service is not provided by the data
+                               backend, e.g. when no <span class="pl-s"><span class="pl-pds">`</span>maxId<span class="pl-s"><span class="pl-pds">'</span> attribute is</span></span>
+<span class="pl-s"><span class="pl-s">                               specified in an N5 dataset. Valid options are</span></span>
+<span class="pl-s"><span class="pl-s">                               (case insensitive): from-data — infer the max id</span></span>
+<span class="pl-s"><span class="pl-s">                               and id service from the dataset (may take a long</span></span>
+<span class="pl-s"><span class="pl-s">                               time for large datasets), none — do not use an</span></span>
+<span class="pl-s"><span class="pl-s">                               id service (requesting new ids will not be</span></span>
+<span class="pl-s"><span class="pl-s">                               possible), and ask — show a dialog to choose</span></span>
+<span class="pl-s"><span class="pl-s">                               between those two options</span></span>
+<span class="pl-s"><span class="pl-s">                               Default: ask</span></span>
+<span class="pl-s"><span class="pl-s">      --include=INCLUDE...   Include any data set that matches any of INCLUDE</span></span>
+<span class="pl-s"><span class="pl-s">                               regex patterns. Takes precedence over EXCLUDE.</span></span>
+<span class="pl-s"><span class="pl-s">      --label-block-lookup-fallback=LABEL_BLOCK_LOOKUP_FALLBACK</span></span>
+<span class="pl-s"><span class="pl-s">                             Set a fallback label block lookup for scenarios in</span></span>
+<span class="pl-s"><span class="pl-s">                               which a label block lookup is not provided by</span></span>
+<span class="pl-s"><span class="pl-s">                               the data backend. The label block lookup is used</span></span>
+<span class="pl-s"><span class="pl-s">                               to process only relevant data during on-the-fly</span></span>
+<span class="pl-s"><span class="pl-s">                               mesh generation. Valid options are: `complete<span class="pl-pds">'</span></span> —</span>
+<span class="pl-s">                               always process the entire dataset (slow <span class="pl-k">for</span></span>
+<span class="pl-s">                               large data), <span class="pl-pds">`</span></span>none<span class="pl-s"><span class="pl-pds">'</span> — do not process at all (no</span>
+<span class="pl-s">                               3D representations/meshes available), and `ask<span class="pl-pds">'</span></span>
+                               — show a dialog to choose between those two
+                               options
+                               Default: ask
+      --max=MAX              Maximum value of contrast range <span class="pl-k">for</span> raw and
+                               channel data.
+      --min=MIN              Minimum value of contrast range <span class="pl-k">for</span> raw and
+                               channel data.
+      --name=NAME            Specify name <span class="pl-k">for</span> dataset(s). The names are
+                               assigned to datasets <span class="pl-k">in</span> the same order as
+                               specified. If more datasets than names are
+                               specified, the remaining dataset names will
+                               default to the last segment of the dataset path.
+      --num-screen-scales=NUM_SCREEN_SCALES
+                             Number of screen scales, defaults to 3. If no
+                               scale option is specified, scales default to
+                               [1.0, 0.5, 0.25, 0.125, 0.0625].
+  -o, --offset=OFFSET        Spatial offset <span class="pl-k">for</span> all dataset(s) specified by
+                               DATASET. Takes meta-data over resolution
+                               specified <span class="pl-k">in</span> meta data of DATASET
+      --only-explicitly-included
+                             When this option is set, use only data sets that
+                               were explicitly included via INCLUDE. Equivalent
+                               to --exclude <span class="pl-s"><span class="pl-pds">'</span>.*<span class="pl-pds">'</span></span>
+      --print-error-codes    List all error codes and exit.
+  -r, --resolution=RESOLUTION
+                             Spatial resolution <span class="pl-k">for</span> all dataset(s) specified by
+                               DATASET. Takes meta-data over resolution
+                               specified <span class="pl-k">in</span> meta data of DATASET
+  -R, --revert-array-attributes
+                             Revert array attributes found <span class="pl-k">in</span> meta data of
+                               attributes of DATASET. Does not affect any array
+                               attributes <span class="pl-c1">set</span> explicitly through the RESOLUTION
+                               or OFFSET options.
+      --screen-scale-factor=SCREEN_SCALE_FACTOR
+                             Scalar value from the open interval (0,1) that
+                               defines how screen scales diminish <span class="pl-k">in</span> each
+                               dimension. Defaults to 0.5. If no scale option
+                               is specified, scales default to [1.0, 0.5, 0.25,
+                               0.125, 0.0625].
+      --screen-scales=SCREEN_SCALES[,SCREEN_SCALES...]...
+                             Explicitly <span class="pl-c1">set</span> screen scales. Must be strictly
+                               monotonically decreasing values <span class="pl-k">in</span> from the
+                               interval (0,1]. Overrides all other screen scale
+                               options. If no scale option is specified, scales
+                               default to [1.0, 0.5, 0.25, 0.125, 0.0625].
+      --version              Print version string and <span class="pl-c1">exit</span>
+      --width=WIDTH          Initial width of viewer. Defaults to 800.
+                               Overrides width stored <span class="pl-k">in</span> project.
+                               Default: -1</pre></div>
+<div class="markdown-heading" dir="auto"><h1 class="heading-element" dir="auto">Usage</h1><a id="user-content-usage" class="anchor" aria-label="Permalink: Usage" href="#usage"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Tutorial videos:</p>
+<ul dir="auto">
+<li><a href="https://www.youtube.com/watch?v=rNJotgwUYqc" rel="nofollow">10 minute overview of Paintera</a></li>
+<li><a href="https://www.youtube.com/watch?v=ZDcK0aCLoRc" rel="nofollow">1 hour in-depth Paintera tutorial</a></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Control Shortcuts</h2><a id="user-content-control-shortcuts" class="anchor" aria-label="Permalink: Control Shortcuts" href="#control-shortcuts"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Window Controls</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>P</code></td>
+<td>Toggle visibility of side panel menu on right hand side</td>
+</tr>
+<tr>
+<td><code>T</code></td>
+<td>Toggle visibility of tool bar</td>
+</tr>
+<tr>
+<td><code>Shift</code> + <code>D</code></td>
+<td>Detach/Reattach current focused view into a separate window</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> + <code>Shift</code> + <code>D</code></td>
+<td>Reset all view windows to default position (3 orthogonal views in one window, with a 3D view as well)</td>
+</tr>
+<tr>
+<td><code>F2</code></td>
+<td>Toggle menu bar visibility</td>
+</tr>
+<tr>
+<td><code>Shift</code> + <code>F2</code></td>
+<td>Toggle menu bar mode (overlay views, or above views)</td>
+</tr>
+<tr>
+<td><code>F3</code></td>
+<td>Toggle statuc bar visibility</td>
+</tr>
+<tr>
+<td><code>Shift</code> + <code>F3</code></td>
+<td>Toggle status bar mode (overlay views, or below views)</td>
+</tr>
+<tr>
+<td><code>F11</code></td>
+<td>Toggle fullscreen</td>
+</tr>
+<tr>
+<td><strong>Project Controls</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Ctrl</code> + <code>C</code></td>
+<td>Show dialog to commit canvas and/or assignments</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> + <code>S</code></td>
+<td>Save current project state. <br><strong>Note</strong>: This does <strong>not</strong> commit/persist canvas. Use the <code>commit canvas</code> dialog to persist any painted labels across sessions.</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> + <code>Q</code></td>
+<td>Quit Paintera</td>
+</tr>
+<tr>
+<td><code>Shortcut</code> + <code>Alt</code> + <code>T</code></td>
+<td>Open scripting REPL</td>
+</tr>
+<tr>
+<td><strong>Help</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>F1</code></td>
+<td>Show Readme (this page)</td>
+</tr>
+<tr>
+<td><code>F4</code></td>
+<td>Show Key bindings</td>
+</tr>
+<tr>
+<td><strong>Bookmarks</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>B</code></td>
+<td>Bookmark current location with the current view settings</td>
+</tr>
+<tr>
+<td><code>Shift</code> + <code>B</code></td>
+<td>Open dialog to add a location bookmark and include a text note</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> + <code>B</code></td>
+<td>Open dialog to select a bookmarked location</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Working with Data</h3><a id="user-content-working-with-data" class="anchor" aria-label="Permalink: Working with Data" href="#working-with-data"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ctrl</code> + <code>O</code></td>
+<td>Show open dataset dialog</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> + <code>Shift</code> + <code>N</code></td>
+<td>Create new label dataset</td>
+</tr>
+<tr>
+<td><code>V</code></td>
+<td>Toggle visibility of current source dataset</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> + <code>Tab</code></td>
+<td>Cycle current source dataset forward</td>
+</tr>
+<tr>
+<td><code>Shift</code> + <code>Ctrl</code> + <code>Tab</code></td>
+<td>Cycle current source dataset backward</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Navigation</h3><a id="user-content-navigation" class="anchor" aria-label="Permalink: Navigation" href="#navigation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li>Paintera shares the same <a href="https://imagej.net/plugins/bdv/#basic-navigation" rel="nofollow">basic navigation controls as BigDataViewer</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mouse scroll wheel, or left/right arrow keys</td>
+<td>Scroll through image z planes</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> + <code>Shift</code> + mouse scroll wheel, or up/down arrow keys</td>
+<td>Zoom in/out</td>
+</tr>
+<tr>
+<td>Right mouse click and drag</td>
+<td>Pan across image</td>
+</tr>
+<tr>
+<td>Left/right arrow keys</td>
+<td>Rotate view in the same plane</td>
+</tr>
+<tr>
+<td>Left mouse click and drag</td>
+<td>Rotate view to a non-orthoslice image plane</td>
+</tr>
+<tr>
+<td><code>Shift</code> + <code>Z</code></td>
+<td>Reset view: un-rotate but keep scale and translation</td>
+</tr>
+<tr>
+<td><code>M</code></td>
+<td>Maximize current view</td>
+</tr>
+<tr>
+<td><code>Shift</code> + <code>M</code></td>
+<td>Maximize split view of one slicing viewer and 3D scene</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Labelling</h3><a id="user-content-labelling" class="anchor" aria-label="Permalink: Labelling" href="#labelling"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Selecting Labels</h4><a id="user-content-selecting-labels" class="anchor" aria-label="Permalink: Selecting Labels" href="#selecting-labels"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Left click</td>
+<td>toggle label id under cursor if current source is label source (de-select all others)</td>
+</tr>
+<tr>
+<td>Right click / <code>Ctrl</code> + left click</td>
+<td>toggle label id under cursor if current source is label source (append to current selection)</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> + <code>A</code></td>
+<td>Select all label ids</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> + <code>Shift</code> + <code>A</code></td>
+<td>Select all label ids in current view</td>
+</tr>
+<tr>
+<td><code>Shift</code> + <code>V</code></td>
+<td>Toggle visibility of not-selected label ids in current source dataset (if dataset is a label source)</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Drawing Labels</h4><a id="user-content-drawing-labels" class="anchor" aria-label="Permalink: Drawing Labels" href="#drawing-labels"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>N</code></td>
+<td>Select new, previously unused label id (you must have a label id selected to paint labels)</td>
+</tr>
+<tr>
+<td><code>Space</code> + left click/drag</td>
+<td>Paint with id that was last toggled active (if any)</td>
+</tr>
+<tr>
+<td><code>Space</code> + right click/drag</td>
+<td>Erase within canvas only</td>
+</tr>
+<tr>
+<td><code>Shift</code> + <code>Space</code> right click/drag</td>
+<td>Erase commited/saved label. Paints with the background label id</td>
+</tr>
+<tr>
+<td><code>Space</code> + mouse scroll wheel</td>
+<td>Change brush size</td>
+</tr>
+<tr>
+<td>Left click</td>
+<td>Select/deselect the label under the mouse cursor</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Label ID Color Mapping</h4><a id="user-content-label-id-color-mapping" class="anchor" aria-label="Permalink: Label ID Color Mapping" href="#label-id-color-mapping"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>C</code></td>
+<td>Change label id color mapping (increments ARGB stream seed by one)</td>
+</tr>
+<tr>
+<td><code>Shift</code> + <code>C</code></td>
+<td>Change label id color mapping (decrements ARGB stream seed by one)</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> + <code>Shift</code> + <code>C</code></td>
+<td>Show ARGB stream seed spinner</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Merge/Split Labels</h4><a id="user-content-mergesplit-labels" class="anchor" aria-label="Permalink: Merge/Split Labels" href="#mergesplit-labels"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Shift</code> + right click</td>
+<td>Split label id under cursor from id that was last toggled active (if any)</td>
+</tr>
+<tr>
+<td><code>Shift</code> + left click</td>
+<td>Merge label id under cursor with id that was last toggled active (if any)</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> + <code>Enter</code></td>
+<td>Merge all selected label ids</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Flood Fill</h4><a id="user-content-flood-fill" class="anchor" aria-label="Permalink: Flood Fill" href="#flood-fill"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>F</code> + left click</td>
+<td>2D Flood-fill in current viewer plane with label id that was last toggled active (if any)</td>
+</tr>
+<tr>
+<td><code>Shift</code> + <code>F</code> + left click</td>
+<td>Flood-fill in all image planes with label id that was last toggled active (if any)</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Shape Interpolation mode</h4><a id="user-content-shape-interpolation-mode" class="anchor" aria-label="Permalink: Shape Interpolation mode" href="#shape-interpolation-mode"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li>
+<p dir="auto">The mode is activated by pressing the <code>S</code> key when the current source is a label source. Then, you can select the objects in the sections by left/right clicking (scrolling automatically fixes the selection in the current section).</p>
+</li>
+<li>
+<p dir="auto">When you're done with selecting the objects in the second section and initiate scrolling, the preview of the interpolated shape will be displayed. If something is not right, you can edit the selection in the first or second section by pressing <code>1</code> or <code>2</code>, which will update the preview. When the desired result is reached, hit <code>Enter</code> to commit the results into the canvas and return back to normal mode.</p>
+</li>
+<li>
+<p dir="auto">Normal navigation controls are also available during shape interpolation, <strong>EXCEPT</strong> the views cannot be rotats. See <a href="#navigation">Navigation</a> controls</p>
+</li>
+<li>
+<p dir="auto">While in the shape interpolation mode, at any point in time you can hit <code>Esc</code> to discard the current state and exit the mode.</p>
+</li>
+<li>
+<p dir="auto">Additionally, the following tools are available during shape interpolation for editing labels</p>
+<ul dir="auto">
+<li>2D <a href="#flood-fill">Flood Fill</a></li>
+<li>Segment Anything <a href="#automatic-labelling-segment-anything">Automatic Labelling</a></li>
+<li>Label Selection</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>S</code></td>
+<td>Enter shape interpolation mode</td>
+</tr>
+<tr>
+<td><code>Esc</code></td>
+<td>Exit shape interpolation mode</td>
+</tr>
+<tr>
+<td><code>1</code> / <code>0</code></td>
+<td>Move to first/last slice</td>
+</tr>
+<tr>
+<td><code>Left Arrow</code> / <code>Right Arrow</code></td>
+<td>Move to the previous/next slice</td>
+</tr>
+<tr>
+<td><code>Enter</code></td>
+<td>Commit interpolated shape into canvas</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> + <code>P</code></td>
+<td>Toggle interpolation preview</td>
+</tr>
+<tr>
+<td>Left Click</td>
+<td>Exclusively select the label under the cursor, <strong>removing</strong> all other labels at this slice</td>
+</tr>
+<tr>
+<td>Right Click</td>
+<td>Inclusively select the label under the cursor, <strong>keeping</strong> all other labels at this slice</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Automatic Labelling: Segment Anything</h4><a id="user-content-automatic-labelling-segment-anything" class="anchor" aria-label="Permalink: Automatic Labelling: Segment Anything" href="#automatic-labelling-segment-anything"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li>Integrates Segment Anything to predict automatic segmentations, based on the underlying image</li>
+<li>Moving the cursor results in real-time interactive predicted segmentations
+<ul dir="auto">
+<li>These predictions are only previews until confirmed with <code>Left Click</code> or <code>Enter</code></li>
+</ul>
+</li>
+<li>Holding <code>Ctrl</code> allows you to specify include/exclude points, instead of predictions based only one the cursor position
+<ul dir="auto">
+<li><strong>Note:</strong> removing <code>Ctrl</code> will revert back to real-time prediction mode. If the cursor is moved, existing include/exclude points will be removed, and the cursor will again be used for the prediction.</li>
+</ul>
+</li>
+<li>See <a href="#automatic-labelling-with-segment-anything">technical notes</a> for more information
+See <a href="#">Technical Notes</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>A</code></td>
+<td>Start automatic labelling mode</td>
+</tr>
+<tr>
+<td>Left Click / <code>Enter</code></td>
+<td>Paint current automatic segmentation to the canvas</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> + Left Click</td>
+<td>Add point which should be <strong>inside</strong> of the automatic segmentation</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> + Right Click</td>
+<td>Add point which should be <strong>outside</strong> of the automatic segmentation</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> + Scroll</td>
+<td>Increase or decreses the threshold to accept the automatic segmentation</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Supported Data</h2><a id="user-content-supported-data" class="anchor" aria-label="Permalink: Supported Data" href="#supported-data"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Paintera supports single and multi-channel raw data and label data from N5, HDF5, Zarr, AWS, and Google Cloud storage. The preferred format is the Paintera data format but regular single or multi-scale datasets can be imported as well. Any N5-like format can be converted into the preferred Paintera format with the <a href="https://github.com/saalfeldlab/paintera-conversion-helper">Paintera Conversion Helper</a> that is automatically installed with Paintera from <a href="#conda">conda</a> or <a href="#pip">pip</a>. For example, to convert raw and neuron_ids of the <a href="https://cremi.org/static/data/sample_A_padded_20160501.hdf" rel="nofollow">padded sample A</a> of the <a href="https://cremi.org" rel="nofollow">CREMI</a> challenge, simply run (assuming the data was downloaded into the current directory):</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="paintera-convert to-paintera \
+  --scale 2,2,1 2,2,1 2,2,1 2 2 \
+  --revert-array-attributes \
+  --output-container=example.n5 \
+  --container=sample_A_padded_20160501.hdf \
+    -d volumes/raw \
+      --target-dataset=volumes/raw2 \
+      --dataset-scale 3,3,1 3,3,1 2 2 \
+      --dataset-resolution 4,4,40.0 \
+    -d volumes/labels/neuron_ids"><pre>paintera-convert to-paintera \
+  --scale 2,2,1 2,2,1 2,2,1 2 2 \
+  --revert-array-attributes \
+  --output-container=example.n5 \
+  --container=sample_A_padded_20160501.hdf \
+    -d volumes/raw \
+      --target-dataset=volumes/raw2 \
+      --dataset-scale 3,3,1 3,3,1 2 2 \
+      --dataset-resolution 4,4,40.0 \
+    -d volumes/labels/neuron_ids</pre></div>
+<p dir="auto">Here,</p>
+<ul dir="auto">
+<li><code>--scale</code> specifies the number of downsampled mipmap levels, where each comma-separated triple specifies a downsampling factor relative to the previous level. The total number of levels in the mipmap pyramid is the number of specified factors plus one (the data at original resolution)</li>
+<li><code>--revert-array-attributes</code> reverses array attributes like <code>"resolution"</code> and <code>"offset"</code> that may be available in the source datasets</li>
+<li><code>--output-container</code> specifies the path to the output n5 container</li>
+<li><code>--container</code> specifies the path to the input container
+<ul dir="auto">
+<li><code>-d</code> adds a input dataset for conversion
+<ul dir="auto">
+<li><code>--target-dataset</code> sets the name of the output dataset</li>
+<li><code>--dataset-scale</code> sets the scale of this dataset, overriding the global <code>--scale</code> parameter</li>
+<li><code>--dataset-resolution</code> sets the resolution of the dataset</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p dir="auto">Paintera Conversion Helper builds upon <a href="https://spark.apache.org" rel="nofollow">Apache Spark</a> and can be run on any Spark Cluster, which is particularly useful for large data sets.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Paintera Data Format</h3><a id="user-content-paintera-data-format" class="anchor" aria-label="Permalink: Paintera Data Format" href="#paintera-data-format"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><a href="https://github.com/saalfeldlab/paintera/issues/61" data-hovercard-type="issue" data-hovercard-url="/saalfeldlab/paintera/issues/61/hovercard">Previously</a> we introduced a specification for the data format.
+There are some ongoing discussions regarding the preferred data format. Paintera can accept any of a number of valid data and metadata formats</p>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Data Containers</h4><a id="user-content-data-containers" class="anchor" aria-label="Permalink: Data Containers" href="#data-containers"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Through the N5 API, Paintera supports multiple data container types:</p>
+<ul dir="auto">
+<li>N5</li>
+<li>HDF5</li>
+<li>Zarr</li>
+<li>N5 over AWS S3</li>
+<li>N5 over Google Cloud</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Metadata</h4><a id="user-content-metadata" class="anchor" aria-label="Permalink: Metadata" href="#metadata"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Paintera also can understand multiple metadata variants:</p>
+<ul dir="auto">
+<li>Paintera Metadata <a href="https://github.com/saalfeldlab/paintera/issues/61" data-hovercard-type="issue" data-hovercard-url="/saalfeldlab/paintera/issues/61/hovercard">#61</a></li>
+<li><a href="https://github.com/janelia-cosem/schemas/blob/master/multiscale.md">Cellmap  Multiscale Metadata</a></li>
+<li><a href="https://github.com/janelia-cosem/schemas/blob/master/multiscale.md#deprecated-n5-viewer-style-source">Deprecated n5-viewer metadata</a></li>
+<li><a href="https://github.com/janelia-cosem/schemas/blob/master/multiscale.md#modern-n5-viewer-style-source">Current n5-viewer metadata</a></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Raw</h4><a id="user-content-raw" class="anchor" aria-label="Permalink: Raw" href="#raw"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Accept any of these:</p>
+<ol dir="auto">
+<li>any regular (i.e. default mode) three-dimensional N5 dataset that is integer or float. Optional attributes are <code>"resolution": [x,y,z]</code> and <code>"offset": [x,y,z]</code>.</li>
+<li>any multiscale N5 group that has <code>"multiScale" : true</code> attribute and contains three-dimensional multi-scale datasets <code>s0</code> ... <code>sN</code>. Optional attributes are <code>"resolution": [x,y,z]</code> and <code>"offset: [x,y,z]"</code>. In addition to the requirements from (1), all <code>s1</code> ... <code>sN</code> datasets must contain <code>"downsamplingFactors": [x,y,z]</code> entry (<code>s0</code> is exempt, will default to <code>[1.0, 1.0, 1.0]</code>). All datasets must have same type. Optional attributes from (1) will be ignored.</li>
+<li>(preferred) any N5 group with attribute <code>"painteraData : {"type" : "raw"}</code> and a dataset/group <code>data</code> that conforms with (2).</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Labels</h4><a id="user-content-labels" class="anchor" aria-label="Permalink: Labels" href="#labels"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Accept any of these:</p>
+<ol dir="auto">
+<li>any regular (i.e. default mode) integer or varlength <code>LabelMultisetType</code> (<code>"isLabelMultiset": true</code>) three-dimensional N5 dataset. Required attributes are <code>"maxId": &lt;id&gt;</code>. Optional attributes are <code>"resolution": [x,y,z]</code>, <code>"offset": [x,y,z]</code>.</li>
+<li>any multiscale N5 group that has <code>"multiScale" : true</code> attribute and contains three-dimensional multi-scale datasets <code>s0</code> ... <code>sN</code>. Required attributes are <code>"maxId": &lt;id&gt;</code>. Optional attributes are <code>"resolution": [x,y,z]</code>, <code>"offset": [x,y,z]</code>, <code>"maxId": &lt;id&gt;</code>. If <code>"maxId"</code> is not specified, it is determined at start-up and added (this can be expensive). In addition to the requirements from (1), all <code>s1</code> ... <code>sN</code> datasets must contain <code>"downsamplingFactors": [x,y,z]</code> entry (<code>s0</code> is exempt, will default to <code>[1.0, 1.0, 1.0]</code>). All datasets must have same type. Optional attributes from (1) will be ignored.</li>
+<li>(preferred) any N5 group with attribute <code>"painteraData : {"type" : "label"}</code> and a dataset/group <code>data</code> that conforms with (2). Required attributes are <code>"maxId": &lt;id&gt;</code>. Optional sub-groups are:</li>
+</ol>
+<ul dir="auto">
+<li><code>fragment-segment-assignment</code> -- Dataset to store fragment-segment lookup table. Can be empty or will be initialized empty if it does not exist.</li>
+<li><code>label-to-block-mapping</code>      -- Multiscale directory tree with one text files per id mapping ids to containing label: <code>label-to-block-mapping/s&lt;scale-level&gt;/&lt;id&gt;</code>. If not present, no meshes will be generated.</li>
+<li><code>unique-labels</code>               -- Multiscale N5 group holding unique label lists per block. If not present (or not using <code>N5FS</code>), meshes will not be updated when commiting canvas.</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Label Multisets</h4><a id="user-content-label-multisets" class="anchor" aria-label="Permalink: Label Multisets" href="#label-multisets"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Paintera uses mipmap pyramids for efficient visualization of large data: At each level of the pyramid, the level of detail (and hence the amount of data) is less than at the previous level. This means that less data needs to be loaded and processed if a lower level detail suffices, e.g. if zoomed out far. Mipmap pyramids are created by gradually downsampling the data starting at original resolution. Naturally, some information is lost at each level. In a naive approach of <em>winner-takes-all</em> downsampling, voxels at lower resolution are assigned the most frequent label id of all contributing voxels at higher resolution, e.g.</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content=" _____ _____
+|  1  |  2  |
+|-----+-----|
+|  2  |  3  |
+ ‾‾‾‾‾ ‾‾‾‾‾"><pre class="notranslate"><code> _____ _____
+|  1  |  2  |
+|-----+-----|
+|  2  |  3  |
+ ‾‾‾‾‾ ‾‾‾‾‾
+</code></pre></div>
+<p dir="auto">will be summarized into</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content=" ___________
+|           |
+|     2     |
+|           |
+ ‾‾‾‾‾‾‾‾‾‾‾"><pre class="notranslate"><code> ___________
+|           |
+|     2     |
+|           |
+ ‾‾‾‾‾‾‾‾‾‾‾
+</code></pre></div>
+<p dir="auto">As a result, label representation does not degenerate gracefully. This becomes obvious in particular when generating 3D representations from such data:
+<a target="_blank" rel="noopener noreferrer" href="img/multisets/mesh-winner-takes-all-cyan.png"><img src="img/multisets/mesh-winner-takes-all-cyan.png" alt="Winner-takes-all downsampling" title="Winner-takes-all downsampling" style="max-width: 100%;"></a>
+Mehses generated at lower resolution exhibit discontinuities. Instead, we propose the use of a non-scalar representation of multi-scale label data: <a href="https://github.com/saalfeldlab/imglib2-label-multisets">label multisets</a>. A summary of all contained labels is stored at each individual voxel instead of a single label. Each voxel contains a list of label ids and the associated counts:</p>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr>
+<td>391</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">The list is sorted by label id to enable efficient containment checks through binary search for arbitrary labels at each voxel. Going back to the simple example for winner-takes-all downsampling,</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content=" _____ _____
+| 1:1 | 2:1 |
+|-----+-----|
+| 2:1 | 3:1 |
+ ‾‾‾‾‾ ‾‾‾‾‾"><pre class="notranslate"><code> _____ _____
+| 1:1 | 2:1 |
+|-----+-----|
+| 2:1 | 3:1 |
+ ‾‾‾‾‾ ‾‾‾‾‾
+</code></pre></div>
+<p dir="auto">will be summarized into</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content=" ___________
+|    1:1    |
+|    2:2    |
+|    3:1    |
+ ‾‾‾‾‾‾‾‾‾‾‾"><pre class="notranslate"><code> ___________
+|    1:1    |
+|    2:2    |
+|    3:1    |
+ ‾‾‾‾‾‾‾‾‾‾‾
+</code></pre></div>
+<p dir="auto">As a result, label data generates gracefully and without discontinuities in 3D representation:
+<a target="_blank" rel="noopener noreferrer" href="img/multisets/mesh-multisets-magenta.png"><img src="img/multisets/mesh-multisets-magenta.png" alt="Label Multisets" title="Label multisets" style="max-width: 100%;"></a>
+This becomes even more apparent when overlaying multiset downsampled labels (magenta) over winner-takes-all downsampled labels (cyan):
+<a target="_blank" rel="noopener noreferrer" href="img/multisets/mesh-multisets-vertices-wta-solid-magenta-cyan.png"><img src="img/multisets/mesh-multisets-vertices-wta-solid-magenta-cyan.png" alt="Label Multisets over winner-takes-all" title="Label multisets over winner-takes-all downsampling" style="max-width: 100%;"></a></p>
+<p dir="auto">These lists can get very large at lower resolution (in the most extreme case, all label ids of a dataset are listed in a single voxel) and it can become necessary to sacrifice some accuracy for efficiency for sufficiently large datasets. The <a href="#supported-data"><code>-m N1 N2 ...</code> flag of the Paintera conversion helper</a> restricts the list of a label multiset to the <code>N</code> most frequent labels if <code>N&gt;0</code>. In general, it is recommended to specify <code>N=-1</code> for the first few mipmap levels and then gradually decrease accuracy at lower resolution levels.</p>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Extracting Scalar Label Data From Paintera Dataset</h4><a id="user-content-extracting-scalar-label-data-from-paintera-dataset" class="anchor" aria-label="Permalink: Extracting Scalar Label Data From Paintera Dataset" href="#extracting-scalar-label-data-from-paintera-dataset"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Introduced in version <code>0.7.0</code> of the <a href="https://github.com/saalfeldlab/paintera-conversion-helper"><code>paintera-conversion-helper</code></a>, the</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="extract-to-scalar"><pre class="notranslate"><code>extract-to-scalar
+</code></pre></div>
+<p dir="auto">command extracts the highest resolution scale level of a Paintera dataset as a scalar <code>uint64</code>. Dataset. This is useful for using Paintera painted labels (and assignments) in downstream processing, e.g. classifier training. Optionally, the <code>fragment-segment-assignment</code> can be considered and additional assignments can be added (versions <code>0.8.0</code> and later). See <code>extract-to-scalar --help</code> for more details. The <code>paintera-conversion-helper</code> is installed with Paintera when installed through <a href="#conda">conda</a> or <a href="#pip">pip</a> but may need to be updated to support this feature.</p>
+<div class="markdown-heading" dir="auto"><h1 class="heading-element" dir="auto">Technical Notes</h1><a id="user-content-technical-notes" class="anchor" aria-label="Permalink: Technical Notes" href="#technical-notes"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">This section will expand in detail some of the technical aspect of some Paintera features that may be useful to understand.</p>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">2D Viewer-Aligned Painting</h4><a id="user-content-2d-viewer-aligned-painting" class="anchor" aria-label="Permalink: 2D Viewer-Aligned Painting" href="#2d-viewer-aligned-painting"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">In the current version of Paintera, all painting occurs in a temporary 2D Viewer aligned image. That is, annotations,
+prior to being submitted to the canvas, exist in a temporary image that is parallel to the screen. The annotation is only
+transformed to the label space upon submiting it to the canvas (e.g. releasing <code>SPACE</code> when painting, or pressing <code>ENTER</code> during <em>Shape Interpolation</em>
+and <em>Segment Anything Automatic Labeling</em>). There are a few benefits of this:</p>
+<ul dir="auto">
+<li>From an implementation standpoint, it is simpler, since you are operating on a 2D rectangular image, rather than transforming during painting</li>
+<li>You can annotate (temporarily) at higher resolution than the label data
+<ul dir="auto">
+<li>When submitting to the canvas, this will of course only be at the resolution of the label data, but it can be used temporarily at higher resolution.</li>
+<li>For example, Shape interpolation lets you interpolate at higher resolution, which helps remove voxel artifacts from the interpolation result.</li>
+</ul>
+</li>
+<li>Resolved mask resolution related painting issue <a href="https://github.com/saalfeldlab/paintera/issues/361" data-hovercard-type="issue" data-hovercard-url="/saalfeldlab/paintera/issues/361/hovercard">#361</a></li>
+<li>Closer to a What You See Is What You Get (WYSIWYG) paint brush, especially at arbitrary rotations
+<ul dir="auto">
+<li>The Viewer-Aligned mask is submitted to the canvas exactly as seen, though it must be fit to the label resolution</li>
+</ul>
+</li>
+<li>Significant speedup of painting in slices of the data non-orthogonal to the label-space</li>
+</ul>
+<p dir="auto">Though there are benefits to painting in this way that is unrelated to the resolution of the underlying data, it can
+also be costly, since you are now potentially painting at a higher resolution than necessary. There are a few strategies
+to mitigate this cost. The main cost occurs when applying the higher resolution mask to the lower resolution (potentially)
+label data. The Viewer mask is applied according to the following process:</p>
+<ol dir="auto">
+<li>Given the interval over the Viewer mask, transform that to label-space to get the label-aligned bounding box of the annotation</li>
+<li>For each label coordinate in the bounding box, calculate its distance from the 2D viewer-aligned plane that was annotated on
+<ol dir="auto">
+<li>If the distance is farther than the maximum brush depth, then it's impossible that this position was annotated, so we are done</li>
+<li>If the distance is closer than resolution of a pixel in the viewer image, then we are so close that we must have been annotated
+<ol dir="auto">
+<li>Set the source value to the annotation label, and we are done</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>If label position is within the range, we need to iterate over the intersection of this label point and the viewer mask,
+at the viewer mask resolution, to determine if any of the overlapping values where painted
+<ol dir="auto">
+<li>If any values in the viewer mask where painted, then fill the label with the painted value</li>
+</ol>
+</li>
+</ol>
+<p dir="auto">This process lets Paintera determine the paint status of many label positions without ever checking if the Viewer mask was actually
+painted or not. For the remaining values, it's only necessary to iterate over the 2D viewer mask until either a value is found, or it
+is determined that the label point was not painted.</p>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Shape Interpolation</h4><a id="user-content-shape-interpolation" class="anchor" aria-label="Permalink: Shape Interpolation" href="#shape-interpolation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Shape interpolation is a painting mode in Paintera that allows you to quickly annotate 3D volumes, in any orientation
+based on key-point slices through the depth axis of the current view.</p>
+<p dir="auto">A rough overview of the shape-interpolation workflow is as follows:</p>
+<ol dir="auto">
+<li>Enter Shape interpolation mode</li>
+<li>Paint (or fill, select, etc.) at the first desired slice</li>
+<li>Scroll through to a different slice (also can pan and zoom)</li>
+<li>Paint another slice
+<ul dir="auto">
+<li>At this stage, the two painted sections will be "interpolated" through the intervening 3D space</li>
+<li>More details <a href="#interpolating-between-two-slices">below</a></li>
+</ul>
+</li>
+<li>Repeat from step 3 for as many slices as you want</li>
+<li>Persist the 3D interpolation to the canvas (ENTER) <strong>OR</strong> exit shape interpolation mode (ESC)</li>
+</ol>
+<p dir="auto">It's important to know that during shape interpolation, the 3D interpolated annotation is not persisted to either the
+in-memory canvas, nor the underlying label dataset. This means that if you exit shape interpolation without accepting
+the interpolated label, then it will be lost.</p>
+<p dir="auto">The powerful functionality of shape interpolation mode comes through its interactivity. While the basic workflow is to
+paint individual slices and have the inerpolation form between them, shape interpolation benefits from modifying both
+the slices as well as the results of the interpolation at some point between existing slices.</p>
+<p dir="auto">This lends itself to a workflow that speeds up annotation quite a bit, by being fast and loose with initial slice
+labels, letting the interpolation fill the volumes in between, and then refining  the resultant interpolation.</p>
+<div class="markdown-heading" dir="auto"><h6 class="heading-element" dir="auto">Interpolating between two slices</h6><a id="user-content-interpolating-between-two-slices" class="anchor" aria-label="Permalink: Interpolating between two slices" href="#interpolating-between-two-slices"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">The interpolation between any two given slices usually works as expected, but the implementation may lead to some
+surprising results if you aren't aware of what's happening under the covers. Between every pair of slices, the interpolation
+is calculated by the following:</p>
+<ol dir="auto">
+<li>Take each slice as 2D label</li>
+<li>Calculate the distance transform over each slice respectively</li>
+<li>Align the two slices such that they are "next to" each other in
+<ul dir="auto">
+<li>i.e, combine them such that they make a 3D volumes with an interval of length <code>2</code> in the 3rd dimension, one slice at
+index 0, the other at index 1</li>
+</ul>
+</li>
+<li>Interpolate over the two slices.</li>
+<li>Scale the depth dimension back out so that they slices are separate the proper distance</li>
+<li>Threshold over the now interpolated 3D volume between the two slices to get the resulting inteprolation</li>
+</ol>
+<p dir="auto">Because the interpolation is implemented this way, you tend to get smooth interpolations between overlapping slices, but
+you may end up with unexpected results if the two slices don't overlap at all, or only just barely.</p>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Automatic Labelling with Segment Anything</h4><a id="user-content-automatic-labelling-with-segment-anything" class="anchor" aria-label="Permalink: Automatic Labelling with Segment Anything" href="#automatic-labelling-with-segment-anything"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Paintera utilizes Meta's open-source <a href="https://segment-anything.com/" rel="nofollow">Segment Anything</a> model to create automatic 2D segmentations over the current slice view.
+The segmentations are produced by a two step process:</p>
+<ol dir="auto">
+<li>The currently active view is encoded into an image embedding that is later used to interactively generate segmentation proposals
+<ul dir="auto">
+<li>This occurs only once per image, regardless of the number of hypotheses generated.  Generating this embedding is computationally demanding and benefits from a decent GPU (~30s per image on CPU, ~1.5s on GPU).  Similar to <a href="https://segment-anything.com/demo" rel="nofollow">Meta AI's browser demo</a>, we run a simple and free to use web-service to create these embeddings for you.</li>
+</ul>
+</li>
+<li>The embedding is used by a small and fast segmentation network to interactively create segmentation hypotheses based on user input (cursor movement, threshold , or inside/ outside points), this network runs on your local CPU
+<ul dir="auto">
+<li>This occurs frequently and in real-time as you move your mouse, add control points, or adjust the threshold</li>
+</ul>
+</li>
+</ol>
+<p dir="auto">To make the experience interactive, Paintera employs some tricks to make this features accessible for computers without powerful GPUs.</p>
+<p dir="auto">The images are compressed and sent to a small server with some GPUs.  This incurs some latency for the round-trip, but is much faster than encoding the image locally (unless an equivalent or better GPU is locally available).
+Overall, the round-trip time from sending the image to receiving the embedding should be around 2-3 seconds.</p>
+<ul dir="auto">
+<li>The option to use your local GPU instead of an external service is also available, see <a href="#running-prediction-service-locally">Running Prediction Service Locally</a>.</li>
+</ul>
+<p dir="auto">Navigation is suspended while exploring segmentations so the same embedding can be re-used.</p>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Generating a Segmentation</h4><a id="user-content-generating-a-segmentation" class="anchor" aria-label="Permalink: Generating a Segmentation" href="#generating-a-segmentation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h6 class="heading-element" dir="auto">Real-time Predictions</h6><a id="user-content-real-time-predictions" class="anchor" aria-label="Permalink: Real-time Predictions" href="#real-time-predictions"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">As mentioned above, the predictions can be done very quickly even on CPU. However there are some limitations to be aware
+about. The Segment anyting model normalizes the images during encoding to be <code>1024x1024</code>. This means that no matter the
+resolution of our display, or the resolution of your data, the highest resolution prediction will be <code>1024x1024</code> per view.
+The image that is sent to the model is only that of the current active view, at the highest screen-scale that is specified.
+This means that it is likely the case that the view sent to the model is less than, or nearly <code>1024</code> along it's max dimension
+anyway, so this effect may not even be noticeable when accepting a segmentation prediction.</p>
+<p dir="auto">An examples of the downscaling applied to an image on a 4K monitor with a <code>3840x2160</code> resolution:</p>
+<ul dir="auto">
+<li>Fullscreen Paintera, with the default 2x2 grid, and side panel turned off
+<ul dir="auto">
+<li>Each view will be <code>1920x1080</code></li>
+<li>Max dimensions is <code>1920</code>, so the image will be scaled down by roughly <code>50%</code></li>
+</ul>
+</li>
+</ul>
+<p dir="auto">Since Segment Anything operates only on <code>1024x1024</code> images, in cases like the above, not only will the image be
+downscaled prior to sending it to the encoding service, the visual screen scale of the view will also temporarily be
+set to match the resolution of the prediction image. This ensures that:</p>
+<ol dir="auto">
+<li>performance for the prediction is independant from screen size</li>
+<li>refreshing the view is quicker, since it is only done at the reduced resolution of the prediction image</li>
+</ol>
+<p dir="auto">Importantly, in cases where the specified screen scale is already a more aggressive downscale that would be automatically
+done as mentioned above, Paintera will use the lower-resolution screen scale. This ensures the prediction matches what
+is displayed, but also allows you to determine whether you want a full-res (that is <code>1024x1024</code>) prediction, or a smaller,
+but faster one.</p>
+<div class="markdown-heading" dir="auto"><h6 class="heading-element" dir="auto">Thresholding</h6><a id="user-content-thresholding" class="anchor" aria-label="Permalink: Thresholding" href="#thresholding"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">When predicting over an image, the model returns an image of float values representing the probability that the given pixel
+lies inside the desired segmentation. Using <code>Ctrl</code> + Scroll you can modify the threshold at which the segmentation is accepted.
+This operates on the same prediction, such that modifying the threshold does not require re-predicting the segmentation</p>
+<div class="markdown-heading" dir="auto"><h6 class="heading-element" dir="auto">Connected Components</h6><a id="user-content-connected-components" class="anchor" aria-label="Permalink: Connected Components" href="#connected-components"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">The resulting thresholded image is then filtered such that the resulting segmentation is a connected component. This helps
+remove unwanted noisy edges of the prediction, that are not actually touching the segmentation under the cursor.</p>
+<ul dir="auto">
+<li>When using <code>Ctrl</code> mode with include points, any connected component that contains an included point will be included
+in the segmentation, even if the components themselves are not connected, or if they also contain an excluded point</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h6 class="heading-element" dir="auto">Running Prediction Service Locally</h6><a id="user-content-running-prediction-service-locally" class="anchor" aria-label="Permalink: Running Prediction Service Locally" href="#running-prediction-service-locally"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">If you want to run the service locally, follow the instruction at <a href="https://github.com/JaneliaSciComp/SAM_service/tree/main">JaneliaSciComp/SAM_service</a>.</p>
+<p dir="auto">Then, before launching Paintera, set the enviornmental variable <code>SAM_SERVICE_HOST</code> to the hostname or ip-address of the new service host.</p>
+</article></div></div> <!-- If no custom description in the Markdown file, the project's GitHub README file is used--> </section> </div> </div> </div>  <footer class="relative border-t border-gray-200 dark:border-slate-800 not-prose"> <div class="dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div> <div class="relative l mx-auto px-4 sm:px-6 dark:text-slate-300"> <div class="flex justify-between items-start my-6"> <div> <div class="mb-2"> <a class="inline-block font-bold text-xl" href="/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2">🔬 Janelia Software
+</a> </div> <div class="flex flex-col gap-2 text-sm text-muted"> <a class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out mr-2 rtl:mr-0 rtl:ml-2" href="https://www.hhmi.org/privacy-policy" target="_blank">Privacy Policy & Cookie Notice</a><a class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out mr-2 rtl:mr-0 rtl:ml-2" href="https://github.com/JaneliaSciComp/ossi-website" target="_blank">This site is open source! Contribute on GitHub.</a> </div> </div> <div class="w-24 min-[400px]:w-32 md:w-44"> <a href="https://www.janelia.org/" target="_blank"> <img src="/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/_astro/HHMI_Janelia_Logo-Black.YPERATnQ.png" alt="Logo for the Howard Hughes Medical Institute Janelia Research Campus" class="block dark:hidden"> <img src="/home/runner/work/ossi-website-action-tests/ossi-website-action-tests/pr-preview/pr-2/_astro/HHMI_Janelia_Logo-White.EXklwjQ9.png" alt="Logo for the Howard Hughes Medical Institute Janelia Research Campus" class="hidden dark:block"> </a> </div> </div> <div>  </div> <div class="md:flex md:items-center md:justify-between pb-6"> <ul class="flex mb-4 md:order-1 md:ml-4 md:mb-0"> <li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm pr-5 md:pr-0 md:pl-5 inline-flex items-center" aria-label="Email" href="#"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:mail">  <symbol id="ai:tabler:mail"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="m3 7l9 6l9-6"/></g></symbol><use xlink:href="#ai:tabler:mail"></use>  </svg>  </a> </li><li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm pr-5 md:pr-0 md:pl-5 inline-flex items-center" aria-label="X" href="#"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:brand-x">  <symbol id="ai:tabler:brand-x"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 4l11.733 16H20L8.267 4zm0 16l6.768-6.768m2.46-2.46L20 4"/></symbol><use xlink:href="#ai:tabler:brand-x"></use>  </svg>  </a> </li><li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm pr-5 md:pr-0 md:pl-5 inline-flex items-center" aria-label="Github" href="https://github.com/JaneliaSciComp"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:brand-github">  <symbol id="ai:tabler:brand-github"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.6-.6 1.2-.5 2V21"/></symbol><use xlink:href="#ai:tabler:brand-github"></use>  </svg>  </a> </li> </ul> <div class="text-sm mr-4 dark:text-slate-400"> © 2024 Howard Hughes Medical Institute </div> </div> </div> </footer>  </body> </html>
