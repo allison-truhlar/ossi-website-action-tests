@@ -20,7 +20,7 @@ concurrency: preview-${{ github.ref }}
 
 env:
   INPUT_PATH: "."
-  PREVIEW_FOLDER: "/pr-preview" # subfolder
+  PREVIEW_FOLDER: "$GITHUB_WORKSPACE/pr-preview" # subfolder
   pr: ${{ github.event.number }}
   OSSI_SITE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   action: auto
